@@ -386,17 +386,16 @@ class ActionPredictDiabetesReadmission(Action):
                 
                 # Create comprehensive AI-powered assessment
                 assessment_message = f"""
-🏥 **AI-POWERED DIABETES READMISSION RISK ASSESSMENT**
+AI-POWERED DIABETES READMISSION RISK ASSESSMENT
 
-{risk_color} **RISK LEVEL: {risk_level}**
-🎯 **AI Confidence Score: {confidence_score:.3f}**
-📊 **Estimated Risk Probability: {risk_percentage}%**
-✅ **API Status: {status.upper()}**
+{risk_color} **RISK LEVEL: {risk_level}
+AI Confidence Score: {confidence_score:.3f}
+Estimated Risk Probability: {risk_percentage}%
 
-🤖 **AI-GENERATED MEDICAL INSIGHTS:**
+**AI-GENERATED MEDICAL INSIGHTS:
 {ai_remedy}
 
-💡 **PERSONALIZED RECOMMENDATIONS:**
+**PERSONALIZED RECOMMENDATIONS:
 Based on the AI analysis, here are key recommendations:
 • Follow up with your healthcare team regularly
 • Monitor your blood glucose levels consistently
@@ -404,10 +403,10 @@ Based on the AI analysis, here are key recommendations:
 • Consider lifestyle modifications for optimal health
 • Stay proactive about your diabetes management
 
-⚕️ **MEDICAL DISCLAIMER:**
+**MEDICAL DISCLAIMER:**
 This AI-powered assessment uses advanced machine learning algorithms and is for informational purposes only. Please discuss these results with your healthcare provider for personalized medical guidance.
 
-🔬 **Technical Details:**
+**Technical Details:**
 - Prediction generated using state-of-the-art ML models
 - Analysis based on {len([k for k, v in medical_data.items() if v is not None])} medical parameters
 - Real-time processing via secure API endpoint

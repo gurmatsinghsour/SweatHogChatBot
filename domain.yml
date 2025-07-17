@@ -46,6 +46,12 @@ intents:
   - provide_pioglitazone
   - provide_rosiglitazone
   - provide_insulin
+  - request_pdf_report
+  - confirm_report_generation
+  - decline_report_generation
+  - ask_report_status
+  - request_report_download
+  - ask_report_info
 
 entities:
   - age
@@ -536,9 +542,30 @@ responses:
   - text: "Perfect! All your medical data is now in my system. I'm running a comprehensive risk analysis that takes into account your demographics, medical history, current treatments, and lab results. This will give you a personalized risk profile!"
   - text: "Fantastic! Thank you for providing such detailed medical information. I'm now conducting a thorough diabetes readmission risk assessment using machine learning algorithms. You'll get a personalized risk evaluation shortly!"
 
+  utter_ask_pdf_report:
+  - text: "📄 Would you like me to generate a comprehensive PDF report of your assessment? This report will include detailed analysis, recommendations, and all your medical data in a professional format."
+  - text: "🎯 I can create a detailed PDF report with your complete diabetes risk assessment. Would you like me to generate this document for your records?"
+  - text: "📋 Would you be interested in a professional PDF report containing your full medical assessment and personalized recommendations?"
+
+  utter_report_generation_started:
+  - text: "📄 Great! I'm generating your comprehensive PDF medical report now. This may take a moment as I compile all your assessment data..."
+  - text: "🎯 Perfect! Starting the PDF report generation process. I'm creating a detailed document with your complete health assessment..."
+  - text: "📋 Excellent! Your PDF report is being generated. I'm compiling all your medical data into a professional document..."
+
+  utter_report_declined:
+  - text: "No problem! You can always request a PDF report later if you change your mind. Is there anything else I can help you with regarding your assessment?"
+  - text: "That's perfectly fine! The assessment results are complete even without the PDF. Feel free to ask if you need any clarification about your results."
+  - text: "Understood! You have all the information you need from the assessment. Let me know if you have any questions about your diabetes risk analysis."
+
+  utter_report_info:
+  - text: "📄 The PDF report includes: Complete risk assessment analysis, AI-generated medical insights, personalized recommendations, detailed data summary, and professional medical formatting. It's perfect for sharing with your healthcare provider!"
+  - text: "🎯 Your PDF report will contain: Your diabetes risk score, comprehensive analysis of all medical factors, personalized treatment recommendations, lifestyle suggestions, and a complete summary of your health data."
+  - text: "📋 The generated report includes: Professional medical assessment, AI-powered insights, risk evaluation details, personalized care recommendations, and all your provided medical information in an organized format."
+
 actions:
   - action_process_medical_data
   - action_predict_diabetes_readmission
+  - action_generate_pdf_report
   - validate_medical_info_form
 
 session_config:

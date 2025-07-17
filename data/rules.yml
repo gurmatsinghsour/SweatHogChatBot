@@ -74,3 +74,23 @@ rules:
     - requested_slot: null
   - action: action_process_medical_data
   - action: action_predict_diabetes_readmission
+
+- rule: Handle report generation requests
+  steps:
+  - intent: request_pdf_report
+  - action: utter_ask_pdf_report
+
+- rule: Provide report information
+  steps:
+  - intent: ask_report_info
+  - action: utter_report_info
+
+- rule: Generate report when confirmed
+  steps:
+  - intent: confirm_report_generation
+  - action: action_generate_pdf_report
+
+- rule: Handle report decline
+  steps:
+  - intent: decline_report_generation
+  - action: utter_report_declined

@@ -56,3 +56,22 @@ stories:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+- story: request pdf report after prediction
+  steps:
+  - intent: request_pdf_report
+  - action: utter_ask_pdf_report
+  - intent: confirm_report_generation
+  - action: action_generate_pdf_report
+
+- story: decline pdf report
+  steps:
+  - intent: request_pdf_report
+  - action: utter_ask_pdf_report
+  - intent: decline_report_generation
+  - action: utter_report_declined
+
+- story: ask about report content
+  steps:
+  - intent: ask_report_info
+  - action: utter_report_info

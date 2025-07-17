@@ -131,14 +131,11 @@ nlu:
     - bingo
     - bull's eye
     - that's the one
-    - perfect
-    - excellent
     - sounds good
     - works for me
     - I'm in
     - count me in
     - let's do it
-    - go for it
     - why not
     - sure thing
     - no problem
@@ -148,8 +145,6 @@ nlu:
     - very well
     - fine
     - good
-    - great
-    - wonderful
 
 - intent: deny
   examples: |
@@ -178,22 +173,8 @@ nlu:
     - I decline
     - I pass
     - count me out
-    - not interested
-    - not for me
-    - I don't want to
-    - I won't
-    - I can't
-    - impossible
-    - out of the question
-    - not happening
-    - forget it
-    - no thanks
-    - no thank you
-    - I'm good
-    - I'm fine without it
     - not today
     - maybe another time
-    - not now
     - later maybe
     - I'll pass
     - skip it
@@ -608,7 +589,6 @@ nlu:
     - what can I do here
     - guide me
     - I'm lost
-    - I don't know what to do
     - explain how this works
     - what are the commands
     - how do I use this
@@ -1614,3 +1594,294 @@ nlu:
     - insulin dose [Steady](insulin)
     - [Up](insulin) insulin taken
     - insulin prescribed [Down](insulin)
+
+- intent: request_pdf_report
+  examples: |
+    - generate a PDF report
+    - I want a PDF report
+    - can you create a report
+    - generate report
+    - I need a medical report
+    - create a comprehensive report
+    - can I get a PDF
+    - make me a report
+    - I want a detailed report
+    - generate my assessment report
+    - create a PDF of my results
+    - I need documentation
+    - can you make a medical document
+    - generate a health report
+    - I want my results in PDF
+    - create a downloadable report
+    - make a professional report
+    - I need a written report
+    - generate assessment documentation
+    - can I download my results
+    - create a medical summary
+    - I want a comprehensive PDF
+    - make me a detailed document
+    - generate my health assessment
+    - can you prepare a report
+    - I need my results documented
+    - create a clinical report
+    - generate a patient report
+    - I want a formal report
+    - make a diabetes assessment report
+    - can I get my analysis in PDF
+    - generate a medical analysis
+    - create a health summary
+    - I need a printable report
+    - make a diagnostic report
+    - generate my medical profile
+    - can you document my assessment
+    - create a risk assessment report
+    - I want my evaluation documented
+    - generate a consultation report
+    - make a healthcare report
+    - can I get a medical certificate
+    - create a treatment summary
+    - generate my care report
+    - I need my health data exported
+    - make a patient summary
+    - can you create documentation
+    - generate a wellness report
+    - create my medical history
+    - I want a complete assessment
+    - make a comprehensive analysis
+
+- intent: confirm_report_generation
+  examples: |
+    - yes generate the report
+    - yes please create it
+    - yes I want the PDF
+    - yes proceed with report
+    - create it please
+    - yes make the report
+    - generate it now
+    - yes I need it
+    - please proceed
+    - yes create the PDF
+    - yes generate
+    - make it happen
+    - yes do it
+    - create the report
+    - yes I want that
+    - proceed please
+    - yes make it
+    - generate the PDF
+    - yes absolutely
+    - create it right now
+    - yes I'd like that
+    - yes please
+    - make the report now
+    - yes create it
+    - I want it generated
+    - yes proceed
+    - create the document
+    - yes generate it
+    - make it please
+    - yes I need the report
+    - create the PDF now
+    - yes do that
+    - generate it please
+    - yes make the PDF
+    - I want the report
+    - yes create the document
+    - proceed with generation
+    - yes I'd like the report
+    - make the PDF
+    - yes generate the document
+    - create it for me
+    - yes I want it
+    - generate the report now
+    - yes make the document
+    - create the assessment
+    - yes I need that
+    - make it for me
+
+- intent: decline_report_generation
+  examples: |
+    - no report needed
+    - skip the PDF
+    - no thanks for now
+    - I don't want it
+    - no PDF needed
+    - no documentation needed
+    - not necessary
+    - no report please
+    - don't generate it
+    - I don't need that
+    - not required
+    - skip the report
+    - no need for PDF
+    - I'm good without it
+    - no report generation
+    - skip that step
+    - not needed
+    - I don't require it
+    - no medical report
+    - don't make it
+    - I'll pass on that
+    - no PDF creation
+    - don't proceed
+    - I'll decline
+    - no written report
+    - not necessary right now
+    - I don't need documentation
+    - skip the document
+    - no formal report
+    - don't generate report
+
+- intent: ask_report_status
+  examples: |
+    - is my report ready
+    - where is my PDF
+    - report status
+    - how's my report coming
+    - is the PDF generated
+    - when will my report be ready
+    - check report progress
+    - is my document ready
+    - report completion status
+    - where can I find my report
+    - has my PDF been created
+    - is the report done
+    - report generation status
+    - when can I download it
+    - is my assessment ready
+    - check my report
+    - where is my document
+    - has the report finished
+    - is my PDF available
+    - report ready yet
+    - can I access my report
+    - is the document complete
+    - where's my medical report
+    - has it been generated
+    - is my report processed
+    - check generation status
+    - when will it be done
+    - is my PDF complete
+    - report availability
+    - is the assessment done
+    - where to find report
+    - has processing finished
+    - is my document available
+    - report completion time
+    - when can I get it
+    - is generation complete
+    - check my PDF status
+    - where is my analysis
+    - has the report been made
+    - is my summary ready
+    - can I view my report
+    - is the PDF processed
+    - report download status
+    - when will I receive it
+    - is my report finished
+    - check document status
+    - where can I access it
+    - has my report been created
+
+- intent: request_report_download
+  examples: |
+    - download my report
+    - I want to download the PDF
+    - can I get the download link
+    - how do I download it
+    - give me the download
+    - I need the download link
+    - where's the download button
+    - can I save the report
+    - download the PDF
+    - I want to save it
+    - how to download my report
+    - get the PDF file
+    - I need to download
+    - can I access the file
+    - download the document
+    - save my report
+    - I want the file
+    - how to get the PDF
+    - download my assessment
+    - can I retrieve the report
+    - get my document
+    - I need the PDF file
+    - download my analysis
+    - save the assessment
+    - I want to keep it
+    - how to save the report
+    - download my summary
+    - get the report file
+    - I need to save this
+    - can I export the report
+    - download my results
+    - save the PDF
+    - I want a copy
+    - how to obtain the file
+    - download the assessment
+    - get my PDF
+    - I need the document
+    - download my evaluation
+    - save my analysis
+    - I want the download
+    - how to access the file
+    - download the results
+    - get the summary
+    - I need to retrieve it
+    - save my evaluation
+    - I want the report file
+    - how to get my document
+    - download my profile
+
+- intent: ask_report_info
+  examples: |
+    - what's in the report
+    - what does the PDF contain
+    - report contents
+    - what information is included
+    - tell me about the report
+    - what's in the document
+    - report details
+    - what will I find in it
+    - describe the report
+    - what data is in the PDF
+    - report information
+    - what's included
+    - tell me about the contents
+    - what kind of report is it
+    - report format details
+    - what sections are in it
+    - describe the PDF
+    - what information will I get
+    - report structure
+    - what's in my assessment
+    - tell me about the document
+    - what data will be shown
+    - report overview
+    - what details are included
+    - describe the contents
+    - what will the report show
+    - PDF content details
+    - what's in my analysis
+    - tell me about my report
+    - what information is provided
+    - report summary
+    - what sections will I see
+    - describe my assessment
+    - what data is documented
+    - report content overview
+    - what's in the medical report
+    - tell me about the analysis
+    - what information is recorded
+    - report composition
+    - what details will I find
+    - describe the medical document
+    - what's in my evaluation
+    - tell me about the PDF format
+    - what data is captured
+    - report specification
+    - what information is compiled
+    - describe the health report
+    - what's in my summary
+    - tell me about the structure
