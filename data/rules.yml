@@ -11,3 +11,66 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+- rule: Help users when they ask for help
+  steps:
+  - intent: ask_help
+  - action: utter_help
+
+- rule: Respond to health questions
+  steps:
+  - intent: ask_about_health
+  - action: utter_health_education
+
+- rule: Address user concerns empathetically
+  steps:
+  - intent: express_concern
+  - action: utter_reassurance
+
+- rule: Acknowledge gratitude warmly
+  steps:
+  - intent: express_gratitude
+  - action: utter_you_are_welcome
+
+- rule: Address privacy concerns
+  steps:
+  - intent: ask_privacy
+  - action: utter_privacy_assurance
+
+- rule: Handle technical issues
+  steps:
+  - intent: technical_issue
+  - action: utter_technical_support
+
+- rule: Respond to great mood positively
+  steps:
+  - intent: mood_great
+  - action: utter_happy
+
+- rule: Respond to unhappy mood supportively (standalone)
+  condition:
+  - active_loop: null
+  steps:
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+
+- rule: Activate medical form
+  steps:
+  - or:
+    - intent: provide_medical_info
+    - intent: request_diabetes_prediction
+  - action: utter_start_medical_form
+  - action: medical_info_form
+  - active_loop: medical_info_form
+
+- rule: Submit medical form and process data
+  condition:
+  - active_loop: medical_info_form
+  steps:
+  - action: medical_info_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_process_medical_data
+  - action: action_predict_diabetes_readmission

@@ -16,6 +16,38 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
+    - hiya
+    - howdy
+    - what's up
+    - greetings
+    - salutations
+    - top of the morning
+    - how are you doing
+    - nice to meet you
+    - pleased to meet you
+    - how's it going
+    - what's happening
+    - how are things
+    - good day
+    - good to see you
+    - welcome
+    - hola
+    - bonjour
+    - guten tag
+    - namaste
+    - aloha
+    - sup
+    - yo
+    - hey buddy
+    - hey friend
+    - morning
+    - evening
+    - afternoon
+    - hi there friend
+    - well hello
+    - oh hey
+    - look who it is
+    - fancy seeing you here
 
 - intent: goodbye
   examples: |
@@ -29,6 +61,43 @@ nlu:
     - see you around
     - bye bye
     - see you later
+    - farewell
+    - take care
+    - catch you later
+    - until next time
+    - talk to you later
+    - peace out
+    - so long
+    - adios
+    - au revoir
+    - auf wiedersehen
+    - sayonara
+    - cheerio
+    - toodles
+    - see ya
+    - gotta go
+    - I'm leaving
+    - I have to go
+    - time to go
+    - I'm out
+    - later
+    - laters
+    - ttyl
+    - talk to you soon
+    - until we meet again
+    - keep in touch
+    - stay safe
+    - be well
+    - good luck
+    - have a good one
+    - take it easy
+    - peace
+    - ciao
+    - ta ta
+    - signing off
+    - I'm done here
+    - that's all for now
+    - see you next time
 
 - intent: affirm
   examples: |
@@ -38,6 +107,49 @@ nlu:
     - of course
     - that sounds good
     - correct
+    - absolutely
+    - definitely
+    - sure
+    - yep
+    - yeah
+    - yup
+    - affirmative
+    - roger that
+    - you bet
+    - for sure
+    - certainly
+    - exactly
+    - right
+    - true
+    - agreed
+    - I agree
+    - that's right
+    - that's correct
+    - precisely
+    - spot on
+    - you got it
+    - bingo
+    - bull's eye
+    - that's the one
+    - perfect
+    - excellent
+    - sounds good
+    - works for me
+    - I'm in
+    - count me in
+    - let's do it
+    - go for it
+    - why not
+    - sure thing
+    - no problem
+    - okay
+    - ok
+    - alright
+    - very well
+    - fine
+    - good
+    - great
+    - wonderful
 
 - intent: deny
   examples: |
@@ -48,6 +160,45 @@ nlu:
     - don't like that
     - no way
     - not really
+    - nope
+    - nah
+    - negative
+    - not at all
+    - absolutely not
+    - definitely not
+    - I disagree
+    - that's wrong
+    - incorrect
+    - false
+    - I don't agree
+    - not true
+    - not correct
+    - not right
+    - I refuse
+    - I decline
+    - I pass
+    - count me out
+    - not interested
+    - not for me
+    - I don't want to
+    - I won't
+    - I can't
+    - impossible
+    - out of the question
+    - not happening
+    - forget it
+    - no thanks
+    - no thank you
+    - I'm good
+    - I'm fine without it
+    - not today
+    - maybe another time
+    - not now
+    - later maybe
+    - I'll pass
+    - skip it
+    - next
+    - move on
 
 - intent: mood_great
   examples: |
@@ -65,6 +216,74 @@ nlu:
     - so so perfect
     - so good
     - so perfect
+    - fantastic
+    - excellent
+    - outstanding
+    - magnificent
+    - brilliant
+    - superb
+    - marvelous
+    - terrific
+    - fabulous
+    - incredible
+    - phenomenal
+    - spectacular
+    - awesome
+    - stellar
+    - top notch
+    - first rate
+    - exceptional
+    - remarkable
+    - impressive
+    - splendid
+    - divine
+    - heavenly
+    - blissful
+    - ecstatic
+    - elated
+    - euphoric
+    - overjoyed
+    - thrilled
+    - delighted
+    - cheerful
+    - upbeat
+    - optimistic
+    - positive
+    - happy
+    - joyful
+    - content
+    - satisfied
+    - pleased
+    - glad
+    - good vibes
+    - feeling blessed
+    - on top of the world
+    - over the moon
+    - walking on air
+    - cloud nine
+    - living my best life
+    - couldn't be better
+    - absolutely wonderful
+    - feeling fantastic
+    - super happy
+    - extremely pleased
+    - very satisfied
+    - totally awesome
+    - really good
+    - pretty great
+    - doing well
+    - feeling positive
+    - in a good mood
+    - spirits are high
+    - feeling upbeat
+    - everything's great
+    - life is good
+    - can't complain
+    - things are looking up
+    - feeling energized
+    - refreshed
+    - revitalized
+    - invigorated
 
 - intent: mood_unhappy
   examples: |
@@ -82,6 +301,100 @@ nlu:
     - extremly sad
     - so saad
     - so sad
+    - terrible
+    - awful
+    - horrible
+    - miserable
+    - depressed
+    - down
+    - blue
+    - gloomy
+    - melancholy
+    - sorrowful
+    - heartbroken
+    - devastated
+    - crushed
+    - defeated
+    - discouraged
+    - disheartened
+    - dejected
+    - despondent
+    - hopeless
+    - despairing
+    - anguished
+    - distressed
+    - troubled
+    - worried
+    - anxious
+    - stressed
+    - overwhelmed
+    - frustrated
+    - annoyed
+    - irritated
+    - angry
+    - upset
+    - hurt
+    - disappointed
+    - let down
+    - betrayed
+    - abandoned
+    - lonely
+    - isolated
+    - empty
+    - numb
+    - lost
+    - confused
+    - bitter
+    - resentful
+    - regretful
+    - guilty
+    - ashamed
+    - embarrassed
+    - humiliated
+    - rejected
+    - unwanted
+    - unloved
+    - unworthy
+    - inadequate
+    - failing
+    - struggling
+    - suffering
+    - in pain
+    - hurting
+    - broken
+    - shattered
+    - torn apart
+    - falling apart
+    - can't cope
+    - having a bad day
+    - everything's wrong
+    - nothing's going right
+    - feel like giving up
+    - rock bottom
+    - at my lowest
+    - feeling low
+    - not myself
+    - out of sorts
+    - under the weather
+    - feeling rough
+    - having a tough time
+    - going through hell
+    - life sucks
+    - everything hurts
+    - I hate everything
+    - I'm done
+    - I can't take it anymore
+    - fed up
+    - sick of it all
+    - exhausted
+    - drained
+    - burnt out
+    - worn out
+    - tired of life
+    - no energy
+    - can't be bothered
+    - what's the point
+    - nothing matters
 
 - intent: bot_challenge
   examples: |
@@ -89,3 +402,1215 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+    - are you real?
+    - are you artificial?
+    - are you a robot?
+    - are you an AI?
+    - are you artificial intelligence?
+    - are you a computer?
+    - are you a machine?
+    - are you automated?
+    - are you a chatbot?
+    - are you a virtual assistant?
+    - are you software?
+    - are you a program?
+    - what are you?
+    - who are you?
+    - what kind of being are you?
+    - are you alive?
+    - do you have feelings?
+    - are you conscious?
+    - do you think?
+    - can you think?
+    - are you sentient?
+    - do you have emotions?
+    - are you self-aware?
+    - do you have a soul?
+    - are you just code?
+    - are you programmed?
+    - who created you?
+    - who made you?
+    - who built you?
+    - how were you made?
+    - what's your purpose?
+    - why do you exist?
+    - what do you do?
+    - how do you work?
+    - what's your function?
+    - are you learning?
+    - do you get smarter?
+    - can you learn?
+    - do you remember?
+    - can you remember me?
+    - do you have memory?
+    - are you intelligent?
+    - how smart are you?
+    - what can you do?
+    - what are your capabilities?
+    - what are your limitations?
+    - can you help me?
+    - what do you know?
+    - how much do you know?
+    - do you understand me?
+    - can you understand?
+    - do you speak other languages?
+    - where are you from?
+    - where do you live?
+    - do you have a body?
+    - do you have a physical form?
+    - are you in the cloud?
+    - are you on a server?
+    - are you digital?
+    - are you virtual?
+
+- intent: provide_medical_info
+  examples: |
+    - I want to provide my medical information
+    - I need to give you my health details
+    - let me share my medical data
+    - I want to fill out the medical form
+    - I have my medical information ready
+    - can I provide my health info
+    - I'd like to share my medical details
+    - let's do the medical assessment
+    - I want to complete the health form
+    - ready to provide medical information
+    - I need to input my health data
+    - let me enter my medical details
+    - I want to submit my health information
+    - can I fill out the health questionnaire
+    - I'd like to complete the medical survey
+    - let's start the health assessment
+    - I need to register my medical info
+    - can I provide my patient details
+    - I want to share my health status
+    - let me give you my medical history
+    - I need to enter my health metrics
+    - can I submit my medical records
+    - I want to provide my health profile
+    - let me complete the patient form
+    - I need to fill in my health details
+    - can I enter my medical background
+    - I want to share my health condition
+    - let me provide my clinical information
+    - I need to input my patient data
+    - can I give you my health overview
+    - I want to complete the medical intake
+    - let me share my diagnostic information
+    - I need to provide my treatment history
+    - can I enter my medication details
+    - I want to share my symptom information
+    - let me provide my vital statistics
+    - I need to input my lab results
+    - can I share my test results
+    - I want to provide my examination data
+    - let me enter my screening information
+    - I need to share my consultation details
+    - can I provide my appointment history
+    - I want to input my procedure information
+    - let me share my surgery details
+    - I need to provide my allergy information
+    - can I enter my family medical history
+    - I want to share my genetic information
+    - let me provide my lifestyle details
+    - I need to input my dietary information
+    - can I share my exercise habits
+    - I want to provide my sleep patterns
+    - let me enter my stress levels
+    - I need to share my mental health status
+    - can I provide my social history
+    - I want to input my occupational health
+    - let me share my environmental exposure
+    - I need to provide my travel history
+    - can I enter my vaccination records
+    - I want to share my immunization status
+    - let me provide my emergency contacts
+    - I need to input my insurance information
+    - can I share my healthcare provider details
+
+- intent: request_diabetes_prediction
+  examples: |
+    - predict my diabetes readmission risk
+    - what's my diabetes readmission chance
+    - assess my diabetes risk
+    - calculate my readmission probability
+    - analyze my diabetes readmission risk
+    - can you predict if I'll be readmitted
+    - what are my chances of coming back to the hospital
+    - evaluate my diabetes readmission likelihood
+    - check my readmission risk for diabetes
+    - I want a diabetes risk assessment
+    - determine my diabetes readmission probability
+    - what's the likelihood of diabetes readmission
+    - can you estimate my readmission risk
+    - I need a diabetes risk evaluation
+    - calculate my chances of hospital return
+    - assess my probability of readmission
+    - what's my risk of being readmitted
+    - can you analyze my diabetes complications
+    - I want to know my readmission odds
+    - evaluate my diabetes management risk
+    - what's my diabetes prognosis
+    - can you predict my health outcomes
+    - assess my future hospital visits
+    - calculate my diabetes risk score
+    - what's my readmission forecast
+    - can you determine my health risk
+    - I need a diabetes outcome prediction
+    - evaluate my treatment effectiveness
+    - what's my recovery probability
+    - can you assess my health trajectory
+    - predict my diabetes complications
+    - what's my long-term health outlook
+    - can you forecast my medical needs
+    - assess my disease progression risk
+    - what's my health stability score
+    - can you evaluate my care quality
+    - predict my healthcare utilization
+    - what's my treatment success rate
+    - can you assess my medication adherence impact
+    - evaluate my lifestyle risk factors
+    - what's my overall health risk
+    - can you predict my quality of life
+    - assess my diabetes control effectiveness
+    - what's my disease management score
+    - can you evaluate my self-care ability
+    - predict my emergency room visits
+    - what's my hospitalization likelihood
+    - can you assess my care coordination needs
+    - evaluate my support system adequacy
+    - what's my health education effectiveness
+    - can you predict my follow-up compliance
+    - assess my monitoring frequency needs
+    - what's my medication optimization potential
+    - can you evaluate my lifestyle modification success
+    - predict my complication prevention effectiveness
+    - what's my overall diabetes outlook
+    - can you assess my long-term care needs
+    - evaluate my health improvement potential
+    - what's my wellness trajectory
+    - can you predict my independence level
+    - assess my quality improvement opportunities
+    - what's my health empowerment score
+
+- intent: ask_help
+  examples: |
+    - help
+    - can you help me
+    - I need help
+    - what can you do
+    - how do you work
+    - what are your features
+    - what services do you offer
+    - how can you assist me
+    - what's available
+    - show me options
+    - what can I do here
+    - guide me
+    - I'm lost
+    - I don't know what to do
+    - explain how this works
+    - what are the commands
+    - how do I use this
+    - what are my choices
+    - show me the menu
+    - list your capabilities
+    - what functions do you have
+    - how can I get started
+    - walk me through this
+    - I need assistance
+    - can you guide me
+    - what should I do
+    - how does this work
+    - explain the process
+    - what are the steps
+    - help me understand
+    - I'm confused
+    - clarify this for me
+    - I need directions
+    - show me how
+    - what's the procedure
+    - help me navigate
+    - I'm new here
+    - first time user
+    - getting started
+    - tutorial please
+    - instructions needed
+    - user manual
+    - documentation
+    - FAQ
+    - frequently asked questions
+    - common issues
+    - troubleshooting
+    - support
+    - customer service
+    - technical support
+    - live chat help
+
+- intent: ask_about_health
+  examples: |
+    - what is diabetes
+    - tell me about diabetes
+    - explain diabetes to me
+    - what causes diabetes
+    - how is diabetes treated
+    - what are diabetes symptoms
+    - what is readmission
+    - why do people get readmitted
+    - what increases readmission risk
+    - how can I prevent readmission
+    - what is blood sugar
+    - what is glucose
+    - what is insulin
+    - what is HbA1c
+    - what are diabetes complications
+    - what is diabetic ketoacidosis
+    - what is hypoglycemia
+    - what is hyperglycemia
+    - what is neuropathy
+    - what is retinopathy
+    - what is nephropathy
+    - what are the types of diabetes
+    - difference between type 1 and type 2
+    - what is gestational diabetes
+    - what is prediabetes
+    - what is metabolic syndrome
+    - what affects blood sugar
+    - how often should I check blood sugar
+    - what is a normal blood sugar range
+    - what foods affect diabetes
+    - what exercise is good for diabetes
+    - what medications treat diabetes
+    - what is metformin
+    - what is insulin therapy
+    - how to manage diabetes
+    - diabetes diet recommendations
+    - diabetes lifestyle changes
+    - diabetes monitoring tools
+    - diabetes technology
+    - continuous glucose monitoring
+    - insulin pumps
+    - diabetes apps
+    - diabetes support groups
+    - diabetes education
+    - diabetes prevention
+    - risk factors for diabetes
+    - family history and diabetes
+    - age and diabetes risk
+    - weight and diabetes
+    - stress and diabetes
+    - sleep and diabetes
+    - alcohol and diabetes
+    - smoking and diabetes
+
+- intent: express_concern
+  examples: |
+    - I'm worried about my health
+    - I'm concerned about diabetes
+    - I'm scared of complications
+    - what if I get worse
+    - I'm anxious about my condition
+    - I'm afraid of readmission
+    - this is stressing me out
+    - I'm nervous about the results
+    - what if something's wrong
+    - I'm worried about my future
+    - I'm concerned about my family
+    - this is making me anxious
+    - I'm scared about my health
+    - I don't want to get sicker
+    - I'm worried about complications
+    - what if I can't manage this
+    - I'm afraid of the unknown
+    - this is overwhelming
+    - I'm stressed about my condition
+    - I'm worried about my lifestyle
+    - I'm concerned about my diet
+    - I'm anxious about exercise
+    - I'm worried about medication
+    - I'm scared of side effects
+    - what if treatment doesn't work
+    - I'm concerned about costs
+    - I'm worried about insurance
+    - I'm anxious about doctor visits
+    - I'm scared of hospitals
+    - I'm worried about pain
+    - I'm concerned about quality of life
+    - I'm anxious about independence
+    - I'm worried about my job
+    - I'm concerned about relationships
+    - I'm scared of being a burden
+    - I'm worried about stigma
+    - I'm anxious about discrimination
+    - I'm concerned about privacy
+    - I'm worried about judgment
+    - this feels hopeless
+    - I feel helpless
+    - I don't know what to do
+    - I feel lost
+    - I'm struggling to cope
+    - this is too much
+    - I can't handle this
+    - I feel overwhelmed
+
+- intent: express_gratitude
+  examples: |
+    - thank you
+    - thanks
+    - thank you so much
+    - thanks a lot
+    - I appreciate it
+    - that's helpful
+    - you've been great
+    - thanks for your help
+    - I'm grateful
+    - that was useful
+    - perfect, thank you
+    - exactly what I needed
+    - you're amazing
+    - that's wonderful
+    - brilliant, thanks
+    - fantastic help
+    - really appreciate it
+    - you're so helpful
+    - thanks for explaining
+    - that makes sense now
+    - you've helped me understand
+    - feeling better now
+    - that reassured me
+    - thanks for the support
+    - you're very kind
+    - much appreciated
+    - grateful for your assistance
+    - you've been wonderful
+    - thanks for listening
+    - you understand me
+    - feeling heard
+    - that's comforting
+    - you've eased my worries
+    - thanks for caring
+    - you're compassionate
+    - feeling supported
+    - you've made my day
+    - thanks for being patient
+    - you're very understanding
+    - appreciative of your time
+    - thanks for the information
+    - that was educational
+    - learned something new
+    - thanks for teaching me
+    - you're a great teacher
+    - that was enlightening
+    - thanks for the guidance
+    - you've pointed me in the right direction
+    - that was exactly what I needed to hear
+    - you've given me hope
+    - feeling more confident now
+    - thanks for the encouragement
+    - you've motivated me
+    - feeling inspired
+
+- intent: ask_privacy
+  examples: |
+    - is my data safe
+    - what happens to my information
+    - is this private
+    - is this confidential
+    - who can see my data
+    - do you store my information
+    - is this secure
+    - what about my privacy
+    - how is my data protected
+    - do you share my information
+    - is this HIPAA compliant
+    - what are your privacy policies
+    - can others access my data
+    - is my health information safe
+    - do you keep records
+    - how long do you store data
+    - can I delete my information
+    - who owns my data
+    - what are my privacy rights
+    - can I control my data
+    - is this anonymous
+    - do you track me
+    - what cookies do you use
+    - do you sell my data
+    - is this encrypted
+    - how secure is this system
+    - what security measures exist
+    - can hackers access this
+    - is this platform safe
+    - what if there's a data breach
+    - how do you prevent leaks
+    - is my identity protected
+    - can I remain anonymous
+    - do I need to provide real information
+    - what personal details are required
+    - is my location tracked
+    - do you monitor conversations
+    - is this conversation recorded
+    - can I trust this system
+    - what guarantees do you offer
+    - how is data transmitted
+    - is communication encrypted
+    - what third parties are involved
+    - do you use cloud storage
+    - where are servers located
+    - what country's laws apply
+    - can government access this
+    - what about law enforcement
+    - are there any backdoors
+    - is source code audited
+    - what certifications do you have
+
+- intent: technical_issue
+  examples: |
+    - this isn't working
+    - I have a problem
+    - there's an error
+    - something's wrong
+    - this is broken
+    - it's not responding
+    - the system is down
+    - I can't access this
+    - it's not loading
+    - page won't open
+    - getting an error message
+    - this is stuck
+    - it's frozen
+    - not working properly
+    - something's not right
+    - having technical difficulties
+    - system malfunction
+    - software bug
+    - application crash
+    - connection issues
+    - network problems
+    - server error
+    - database error
+    - login problems
+    - can't sign in
+    - password not working
+    - account locked
+    - access denied
+    - permission error
+    - authorization failed
+    - session expired
+    - timeout error
+    - slow performance
+    - takes too long to load
+    - running slowly
+    - laggy response
+    - unresponsive interface
+    - buttons not working
+    - links broken
+    - navigation issues
+    - form not submitting
+    - data not saving
+    - information lost
+    - progress not recorded
+    - results not showing
+    - display problems
+    - formatting issues
+    - text not readable
+    - images not loading
+    - videos not playing
+    - audio not working
+    - microphone issues
+    - camera problems
+    - device compatibility
+    - browser issues
+    - mobile problems
+    - app crashes
+    - installation failed
+
+- intent: provide_age
+  examples: |
+    - I am [25](age) years old
+    - my age is [42](age)
+    - I'm [67](age)
+    - [33](age) years old
+    - I am [55](age)
+    - my age: [28](age)
+    - age [45](age)
+    - I'm [19](age) years old
+    - [72](age) years
+    - I am age [38](age)
+    - my current age is [51](age)
+    - I'm currently [29](age)
+    - [64](age) years of age
+    - I am [31](age) years
+    - age is [47](age)
+    - I'm [23](age) now
+    - [58](age) years old today
+    - my age would be [35](age)
+    - I turned [41](age) this year
+    - [26](age) as of today
+
+- intent: provide_gender
+  examples: |
+    - I am [male](gender)
+    - I'm [female](gender)
+    - my gender is [male](gender)
+    - [female](gender)
+    - I am a [man](gender)
+    - I'm a [woman](gender)
+    - gender: [male](gender)
+    - [male](gender) gender
+    - I identify as [female](gender)
+    - my sex is [male](gender)
+    - I'm [non-binary](gender)
+    - gender [female](gender)
+    - I am [transgender](gender)
+    - [other](gender) gender
+    - prefer not to say about gender
+    - my gender identity is [female](gender)
+    - I was born [male](gender)
+    - biological sex [female](gender)
+    - gender assigned at birth [male](gender)
+    - I present as [female](gender)
+
+- intent: provide_race
+  examples: |
+    - I am [Caucasian](race)
+    - my race is [African American](race)
+    - I'm [Hispanic](race)
+    - [Asian](race)
+    - I am [White](race)
+    - my ethnicity is [Latino](race)
+    - race: [Black](race)
+    - [Native American](race) heritage
+    - I identify as [Pacific Islander](race)
+    - my background is [Mixed](race)
+    - I'm [Indian](race)
+    - race [Chinese](race)
+    - I am [European](race)
+    - [Middle Eastern](race) descent
+    - my ancestry is [Jewish](race)
+    - I'm of [Irish](race) origin
+    - [Other](race) race
+    - ethnicity [Mexican](race)
+    - I come from [Korean](race) background
+    - my heritage is [Filipino](race)
+
+- intent: provide_admission_type
+  examples: |
+    - admission type was [Emergency](admission_type_id)
+    - I came in through [Urgent](admission_type_id)
+    - my admission was [Elective](admission_type_id)
+    - [Emergency](admission_type_id) admission
+    - I was admitted via [Urgent](admission_type_id)
+    - admission type: [Elective](admission_type_id)
+    - [Emergency](admission_type_id) entry
+    - I had an [Urgent](admission_type_id) admission
+    - admitted through [Emergency](admission_type_id)
+    - my admission type is [Elective](admission_type_id)
+    - came in as [Emergency](admission_type_id)
+    - [Urgent](admission_type_id) admission type
+    - I was [Emergency](admission_type_id) admitted
+    - admission was [Elective](admission_type_id)
+    - [Emergency](admission_type_id) visit
+    - I had [Urgent](admission_type_id) care
+    - admitted for [Elective](admission_type_id) procedure
+    - [Emergency](admission_type_id) department admission
+    - came through [Urgent](admission_type_id) care
+    - my entry was [Emergency](admission_type_id)
+
+- intent: provide_discharge_disposition
+  examples: |
+    - discharged [Home](discharge_disposition_id)
+    - I went [Home](discharge_disposition_id)
+    - discharge to [Skilled Nursing Facility](discharge_disposition_id)
+    - [Home](discharge_disposition_id) discharge
+    - I was sent [Home](discharge_disposition_id)
+    - discharged to [Rehabilitation](discharge_disposition_id)
+    - went [Home](discharge_disposition_id)
+    - discharge disposition: [Home](discharge_disposition_id)
+    - [Skilled Nursing Facility](discharge_disposition_id) discharge
+    - I left to go [Home](discharge_disposition_id)
+    - discharged to [Long-term Care](discharge_disposition_id)
+    - [Rehabilitation](discharge_disposition_id) facility
+    - I went to [Skilled Nursing Facility](discharge_disposition_id)
+    - discharge to [Home Health Care](discharge_disposition_id)
+    - [Home](discharge_disposition_id) with services
+    - transferred to [Rehabilitation](discharge_disposition_id)
+    - discharged [Home](discharge_disposition_id) with care
+    - went to [Long-term Care](discharge_disposition_id)
+    - [Skilled Nursing Facility](discharge_disposition_id) placement
+    - discharge was [Home](discharge_disposition_id)
+
+- intent: provide_admission_source
+  examples: |
+    - admission source was [Emergency Room](admission_source_id)
+    - I came from [Physician Referral](admission_source_id)
+    - admitted from [Emergency Room](admission_source_id)
+    - [Emergency Room](admission_source_id) admission
+    - I was referred by [Physician Referral](admission_source_id)
+    - admission source: [Emergency Room](admission_source_id)
+    - [Physician Referral](admission_source_id) sent me
+    - came through [Emergency Room](admission_source_id)
+    - admitted via [Clinic Referral](admission_source_id)
+    - my source was [Emergency Room](admission_source_id)
+    - [Transfer from Hospital](admission_source_id)
+    - I came from [Clinic Referral](admission_source_id)
+    - admission from [Physician Referral](admission_source_id)
+    - [Emergency Room](admission_source_id) referral
+    - transferred from [Transfer from Hospital](admission_source_id)
+    - came via [Physician Referral](admission_source_id)
+    - [Clinic Referral](admission_source_id) admission
+    - I was admitted through [Emergency Room](admission_source_id)
+    - source [Physician Referral](admission_source_id)
+    - [Emergency Room](admission_source_id) entry
+
+- intent: provide_time_in_hospital
+  examples: |
+    - I stayed [3](time_in_hospital) days
+    - time in hospital was [5](time_in_hospital) days
+    - [7](time_in_hospital) days in hospital
+    - I was there for [2](time_in_hospital) days
+    - hospital stay [4](time_in_hospital) days
+    - [1](time_in_hospital) day stay
+    - I spent [6](time_in_hospital) days there
+    - duration [3](time_in_hospital) days
+    - [8](time_in_hospital) days total
+    - my stay was [2](time_in_hospital) days
+    - [5](time_in_hospital) days hospitalized
+    - I was in for [4](time_in_hospital) days
+    - length of stay [7](time_in_hospital) days
+    - [9](time_in_hospital) days in the hospital
+    - stayed [1](time_in_hospital) day
+    - hospital time [3](time_in_hospital) days
+    - [6](time_in_hospital) day admission
+    - I remained [2](time_in_hospital) days
+    - [10](time_in_hospital) days hospitalization
+    - stay duration [5](time_in_hospital) days
+
+- intent: provide_lab_procedures
+  examples: |
+    - I had [15](num_lab_procedures) lab tests
+    - number of lab procedures was [23](num_lab_procedures)
+    - [8](num_lab_procedures) lab procedures
+    - I got [12](num_lab_procedures) lab tests done
+    - lab procedures: [19](num_lab_procedures)
+    - [6](num_lab_procedures) laboratory tests
+    - I underwent [25](num_lab_procedures) lab procedures
+    - total [14](num_lab_procedures) lab tests
+    - [21](num_lab_procedures) lab procedures performed
+    - my lab count was [17](num_lab_procedures)
+    - [9](num_lab_procedures) laboratory procedures
+    - I had [31](num_lab_procedures) tests done
+    - lab procedure count [11](num_lab_procedures)
+    - [28](num_lab_procedures) lab tests total
+    - number of tests [16](num_lab_procedures)
+    - [7](num_lab_procedures) lab procedures done
+    - I received [22](num_lab_procedures) lab tests
+    - laboratory procedures [13](num_lab_procedures)
+    - [20](num_lab_procedures) tests performed
+    - lab work [18](num_lab_procedures) procedures
+
+- intent: provide_procedures
+  examples: |
+    - I had [2](num_procedures) procedures
+    - number of procedures was [4](num_procedures)
+    - [1](num_procedures) procedure done
+    - I underwent [3](num_procedures) procedures
+    - procedures: [5](num_procedures)
+    - [0](num_procedures) procedures
+    - I received [2](num_procedures) procedures
+    - total [6](num_procedures) procedures
+    - [4](num_procedures) procedures performed
+    - my procedure count was [1](num_procedures)
+    - [3](num_procedures) medical procedures
+    - I had [7](num_procedures) procedures done
+    - procedure count [2](num_procedures)
+    - [5](num_procedures) procedures total
+    - number of procedures [1](num_procedures)
+    - [8](num_procedures) procedures done
+    - I received [4](num_procedures) procedures
+    - medical procedures [3](num_procedures)
+    - [6](num_procedures) procedures performed
+    - procedure work [2](num_procedures) done
+
+- intent: provide_medications
+  examples: |
+    - I take [8](num_medications) medications
+    - number of medications is [12](num_medications)
+    - [5](num_medications) medications
+    - I'm on [15](num_medications) medications
+    - medications: [7](num_medications)
+    - [3](num_medications) different medications
+    - I use [11](num_medications) medications
+    - total [9](num_medications) medications
+    - [14](num_medications) medications prescribed
+    - my medication count is [6](num_medications)
+    - [10](num_medications) different drugs
+    - I take [4](num_medications) medications daily
+    - medication count [13](num_medications)
+    - [16](num_medications) medications total
+    - number of drugs [8](num_medications)
+    - [2](num_medications) medications prescribed
+    - I'm taking [17](num_medications) medications
+    - prescribed medications [9](num_medications)
+    - [11](num_medications) medications currently
+    - medication total [7](num_medications)
+
+- intent: provide_outpatient_visits
+  examples: |
+    - I had [3](number_outpatient) outpatient visits
+    - number of outpatient visits was [5](number_outpatient)
+    - [2](number_outpatient) outpatient visits
+    - I made [7](number_outpatient) outpatient visits
+    - outpatient visits: [4](number_outpatient)
+    - [1](number_outpatient) outpatient visit
+    - I attended [6](number_outpatient) outpatient visits
+    - total [8](number_outpatient) outpatient visits
+    - [9](number_outpatient) outpatient appointments
+    - my outpatient count was [3](number_outpatient)
+    - [5](number_outpatient) clinic visits
+    - I had [10](number_outpatient) outpatient visits
+    - outpatient visit count [2](number_outpatient)
+    - [7](number_outpatient) outpatient visits total
+    - number of visits [4](number_outpatient)
+    - [6](number_outpatient) outpatient appointments
+    - I went to [1](number_outpatient) outpatient visit
+    - clinic visits [8](number_outpatient)
+    - [11](number_outpatient) outpatient visits made
+    - outpatient total [3](number_outpatient)
+
+- intent: provide_emergency_visits
+  examples: |
+    - I had [1](number_emergency) emergency visit
+    - number of emergency visits was [2](number_emergency)
+    - [0](number_emergency) emergency visits
+    - I made [3](number_emergency) emergency visits
+    - emergency visits: [1](number_emergency)
+    - [2](number_emergency) emergency room visits
+    - I went to [4](number_emergency) emergency visits
+    - total [1](number_emergency) emergency visits
+    - [3](number_emergency) ER visits
+    - my emergency count was [2](number_emergency)
+    - [5](number_emergency) emergency visits
+    - I had [1](number_emergency) ER visit
+    - emergency visit count [0](number_emergency)
+    - [2](number_emergency) emergency visits total
+    - number of ER visits [3](number_emergency)
+    - [4](number_emergency) emergency room visits
+    - I went to [1](number_emergency) emergency visit
+    - ER visits [2](number_emergency)
+    - [6](number_emergency) emergency visits made
+    - emergency total [1](number_emergency)
+
+- intent: provide_inpatient_visits
+  examples: |
+    - I had [1](number_inpatient) inpatient visit
+    - number of inpatient visits was [2](number_inpatient)
+    - [0](number_inpatient) inpatient visits
+    - I made [1](number_inpatient) inpatient visit
+    - inpatient visits: [3](number_inpatient)
+    - [2](number_inpatient) hospital stays
+    - I was admitted [1](number_inpatient) time
+    - total [2](number_inpatient) inpatient visits
+    - [4](number_inpatient) hospitalizations
+    - my inpatient count was [1](number_inpatient)
+    - [3](number_inpatient) hospital admissions
+    - I had [0](number_inpatient) inpatient visits
+    - inpatient visit count [2](number_inpatient)
+    - [1](number_inpatient) inpatient visits total
+    - number of admissions [3](number_inpatient)
+    - [2](number_inpatient) hospital visits
+    - I was hospitalized [1](number_inpatient) time
+    - hospital stays [2](number_inpatient)
+    - [5](number_inpatient) inpatient visits made
+    - inpatient total [1](number_inpatient)
+
+- intent: provide_diagnosis_count
+  examples: |
+    - I have [3](number_diagnoses) diagnoses
+    - number of diagnoses is [5](number_diagnoses)
+    - [2](number_diagnoses) diagnoses
+    - I was diagnosed with [4](number_diagnoses) conditions
+    - diagnoses: [6](number_diagnoses)
+    - [1](number_diagnoses) diagnosis
+    - I have [7](number_diagnoses) medical conditions
+    - total [3](number_diagnoses) diagnoses
+    - [8](number_diagnoses) diagnosed conditions
+    - my diagnosis count is [2](number_diagnoses)
+    - [5](number_diagnoses) different diagnoses
+    - I have [4](number_diagnoses) conditions
+    - diagnosis count [6](number_diagnoses)
+    - [9](number_diagnoses) diagnoses total
+    - number of conditions [3](number_diagnoses)
+    - [7](number_diagnoses) medical diagnoses
+    - I was given [2](number_diagnoses) diagnoses
+    - medical conditions [5](number_diagnoses)
+    - [10](number_diagnoses) diagnoses made
+    - diagnosis total [4](number_diagnoses)
+
+- intent: provide_glucose_test
+  examples: |
+    - glucose test result was [None](max_glu_serum)
+    - my glucose test was [>200](max_glu_serum)
+    - [>300](max_glu_serum) glucose serum
+    - glucose serum [Norm](max_glu_serum)
+    - my glucose was [>200](max_glu_serum)
+    - glucose test: [None](max_glu_serum)
+    - [>300](max_glu_serum) glucose result
+    - glucose serum test [Norm](max_glu_serum)
+    - my glucose level was [>200](max_glu_serum)
+    - [None](max_glu_serum) glucose test
+    - glucose reading [>300](max_glu_serum)
+    - my glucose test showed [Norm](max_glu_serum)
+    - glucose serum level [>200](max_glu_serum)
+    - [>300](max_glu_serum) glucose test result
+    - glucose was [None](max_glu_serum)
+    - [Norm](max_glu_serum) glucose serum
+    - glucose test came back [>200](max_glu_serum)
+    - serum glucose [>300](max_glu_serum)
+    - [None](max_glu_serum) on glucose test
+    - glucose level [Norm](max_glu_serum)
+
+- intent: provide_a1c_test
+  examples: |
+    - A1C test was [None](A1Cresult)
+    - my A1C was [>8](A1Cresult)
+    - [>7](A1Cresult) A1C result
+    - A1C result [Norm](A1Cresult)
+    - my hemoglobin A1C was [>8](A1Cresult)
+    - A1C test: [None](A1Cresult)
+    - [>7](A1Cresult) A1C level
+    - A1C test result [Norm](A1Cresult)
+    - my A1C level was [>8](A1Cresult)
+    - [None](A1Cresult) A1C test
+    - A1C reading [>7](A1Cresult)
+    - my A1C test showed [Norm](A1Cresult)
+    - hemoglobin A1C [>8](A1Cresult)
+    - [>7](A1Cresult) A1C test result
+    - A1C was [None](A1Cresult)
+    - [Norm](A1Cresult) A1C result
+    - A1C test came back [>8](A1Cresult)
+    - A1C level [>7](A1Cresult)
+    - [None](A1Cresult) on A1C test
+    - hemoglobin A1C level [Norm](A1Cresult)
+
+- intent: provide_medication_changes
+  examples: |
+    - medication change was [No](change)
+    - my medication was [Up](change)
+    - [Down](change) medication change
+    - medication change [Steady](change)
+    - my medication was changed [No](change)
+    - medication: [Up](change)
+    - [Down](change) medication adjustment
+    - medication change status [Steady](change)
+    - my medication change was [No](change)
+    - [Up](change) medication change
+    - medication adjustment [Down](change)
+    - my medication stayed [Steady](change)
+    - medication dosage [Up](change)
+    - [No](change) medication change
+    - medication was [Down](change)
+    - [Steady](change) medication status
+    - medication change [Up](change)
+    - dosage [Down](change)
+    - [No](change) change in medication
+    - medication level [Steady](change)
+
+- intent: provide_diabetes_medication
+  examples: |
+    - diabetes medication was [No](diabetesMed)
+    - I take [Yes](diabetesMed) diabetes medication
+    - [No](diabetesMed) diabetes meds
+    - diabetes medication [Yes](diabetesMed)
+    - I'm on [No](diabetesMed) diabetes medication
+    - diabetes med: [Yes](diabetesMed)
+    - [No](diabetesMed) diabetic medication
+    - diabetes medication status [Yes](diabetesMed)
+    - I use [No](diabetesMed) diabetes medication
+    - [Yes](diabetesMed) diabetes medication
+    - diabetic medication [No](diabetesMed)
+    - I take [Yes](diabetesMed) diabetic meds
+    - diabetes medication is [No](diabetesMed)
+    - [Yes](diabetesMed) diabetic medication
+    - I'm taking [No](diabetesMed) diabetes medication
+    - [Yes](diabetesMed) diabetes meds
+    - diabetes medication use [No](diabetesMed)
+    - diabetic meds [Yes](diabetesMed)
+    - [No](diabetesMed) diabetes medication taken
+    - diabetes medication prescribed [Yes](diabetesMed)
+
+- intent: provide_metformin
+  examples: |
+    - metformin was [No](metformin)
+    - I take [Steady](metformin) metformin
+    - [Up](metformin) metformin
+    - metformin [Down](metformin)
+    - I'm on [No](metformin) metformin
+    - metformin: [Steady](metformin)
+    - [Up](metformin) metformin dosage
+    - metformin status [Down](metformin)
+    - I use [No](metformin) metformin
+    - [Steady](metformin) metformin
+    - metformin medication [Up](metformin)
+    - I take [Down](metformin) metformin
+    - metformin is [No](metformin)
+    - [Steady](metformin) metformin dose
+    - I'm taking [Up](metformin) metformin
+    - [Down](metformin) metformin medication
+    - metformin use [No](metformin)
+    - metformin dose [Steady](metformin)
+    - [Up](metformin) metformin taken
+    - metformin prescribed [Down](metformin)
+
+- intent: provide_repaglinide
+  examples: |
+    - repaglinide was [No](repaglinide)
+    - I take [Steady](repaglinide) repaglinide
+    - [Up](repaglinide) repaglinide
+    - repaglinide [Down](repaglinide)
+    - I'm on [No](repaglinide) repaglinide
+    - repaglinide: [Steady](repaglinide)
+    - [Up](repaglinide) repaglinide dosage
+    - repaglinide status [Down](repaglinide)
+    - I use [No](repaglinide) repaglinide
+    - [Steady](repaglinide) repaglinide
+    - repaglinide medication [Up](repaglinide)
+    - I take [Down](repaglinide) repaglinide
+    - repaglinide is [No](repaglinide)
+    - [Steady](repaglinide) repaglinide dose
+    - I'm taking [Up](repaglinide) repaglinide
+    - [Down](repaglinide) repaglinide medication
+    - repaglinide use [No](repaglinide)
+    - repaglinide dose [Steady](repaglinide)
+    - [Up](repaglinide) repaglinide taken
+    - repaglinide prescribed [Down](repaglinide)
+
+- intent: provide_nateglinide
+  examples: |
+    - nateglinide was [No](nateglinide)
+    - I take [Steady](nateglinide) nateglinide
+    - [Up](nateglinide) nateglinide
+    - nateglinide [Down](nateglinide)
+    - I'm on [No](nateglinide) nateglinide
+    - nateglinide: [Steady](nateglinide)
+    - [Up](nateglinide) nateglinide dosage
+    - nateglinide status [Down](nateglinide)
+    - I use [No](nateglinide) nateglinide
+    - [Steady](nateglinide) nateglinide
+    - nateglinide medication [Up](nateglinide)
+    - I take [Down](nateglinide) nateglinide
+    - nateglinide is [No](nateglinide)
+    - [Steady](nateglinide) nateglinide dose
+    - I'm taking [Up](nateglinide) nateglinide
+    - [Down](nateglinide) nateglinide medication
+    - nateglinide use [No](nateglinide)
+    - nateglinide dose [Steady](nateglinide)
+    - [Up](nateglinide) nateglinide taken
+    - nateglinide prescribed [Down](nateglinide)
+
+- intent: provide_chlorpropamide
+  examples: |
+    - chlorpropamide was [No](chlorpropamide)
+    - I take [Steady](chlorpropamide) chlorpropamide
+    - [Up](chlorpropamide) chlorpropamide
+    - chlorpropamide [Down](chlorpropamide)
+    - I'm on [No](chlorpropamide) chlorpropamide
+    - chlorpropamide: [Steady](chlorpropamide)
+    - [Up](chlorpropamide) chlorpropamide dosage
+    - chlorpropamide status [Down](chlorpropamide)
+    - I use [No](chlorpropamide) chlorpropamide
+    - [Steady](chlorpropamide) chlorpropamide
+    - chlorpropamide medication [Up](chlorpropamide)
+    - I take [Down](chlorpropamide) chlorpropamide
+    - chlorpropamide is [No](chlorpropamide)
+    - [Steady](chlorpropamide) chlorpropamide dose
+    - I'm taking [Up](chlorpropamide) chlorpropamide
+    - [Down](chlorpropamide) chlorpropamide medication
+    - chlorpropamide use [No](chlorpropamide)
+    - chlorpropamide dose [Steady](chlorpropamide)
+    - [Up](chlorpropamide) chlorpropamide taken
+    - chlorpropamide prescribed [Down](chlorpropamide)
+
+- intent: provide_glimepiride
+  examples: |
+    - glimepiride was [No](glimepiride)
+    - I take [Steady](glimepiride) glimepiride
+    - [Up](glimepiride) glimepiride
+    - glimepiride [Down](glimepiride)
+    - I'm on [No](glimepiride) glimepiride
+    - glimepiride: [Steady](glimepiride)
+    - [Up](glimepiride) glimepiride dosage
+    - glimepiride status [Down](glimepiride)
+    - I use [No](glimepiride) glimepiride
+    - [Steady](glimepiride) glimepiride
+    - glimepiride medication [Up](glimepiride)
+    - I take [Down](glimepiride) glimepiride
+    - glimepiride is [No](glimepiride)
+    - [Steady](glimepiride) glimepiride dose
+    - I'm taking [Up](glimepiride) glimepiride
+    - [Down](glimepiride) glimepiride medication
+    - glimepiride use [No](glimepiride)
+    - glimepiride dose [Steady](glimepiride)
+    - [Up](glimepiride) glimepiride taken
+    - glimepiride prescribed [Down](glimepiride)
+
+- intent: provide_acetohexamide
+  examples: |
+    - acetohexamide was [No](acetohexamide)
+    - I take [Steady](acetohexamide) acetohexamide
+    - [Up](acetohexamide) acetohexamide
+    - acetohexamide [Down](acetohexamide)
+    - I'm on [No](acetohexamide) acetohexamide
+    - acetohexamide: [Steady](acetohexamide)
+    - [Up](acetohexamide) acetohexamide dosage
+    - acetohexamide status [Down](acetohexamide)
+    - I use [No](acetohexamide) acetohexamide
+    - [Steady](acetohexamide) acetohexamide
+    - acetohexamide medication [Up](acetohexamide)
+    - I take [Down](acetohexamide) acetohexamide
+    - acetohexamide is [No](acetohexamide)
+    - [Steady](acetohexamide) acetohexamide dose
+    - I'm taking [Up](acetohexamide) acetohexamide
+    - [Down](acetohexamide) acetohexamide medication
+    - acetohexamide use [No](acetohexamide)
+    - acetohexamide dose [Steady](acetohexamide)
+    - [Up](acetohexamide) acetohexamide taken
+    - acetohexamide prescribed [Down](acetohexamide)
+
+- intent: provide_glipizide
+  examples: |
+    - glipizide was [No](glipizide)
+    - I take [Steady](glipizide) glipizide
+    - [Up](glipizide) glipizide
+    - glipizide [Down](glipizide)
+    - I'm on [No](glipizide) glipizide
+    - glipizide: [Steady](glipizide)
+    - [Up](glipizide) glipizide dosage
+    - glipizide status [Down](glipizide)
+    - I use [No](glipizide) glipizide
+    - [Steady](glipizide) glipizide
+    - glipizide medication [Up](glipizide)
+    - I take [Down](glipizide) glipizide
+    - glipizide is [No](glipizide)
+    - [Steady](glipizide) glipizide dose
+    - I'm taking [Up](glipizide) glipizide
+    - [Down](glipizide) glipizide medication
+    - glipizide use [No](glipizide)
+    - glipizide dose [Steady](glipizide)
+    - [Up](glipizide) glipizide taken
+    - glipizide prescribed [Down](glipizide)
+
+- intent: provide_glyburide
+  examples: |
+    - glyburide was [No](glyburide)
+    - I take [Steady](glyburide) glyburide
+    - [Up](glyburide) glyburide
+    - glyburide [Down](glyburide)
+    - I'm on [No](glyburide) glyburide
+    - glyburide: [Steady](glyburide)
+    - [Up](glyburide) glyburide dosage
+    - glyburide status [Down](glyburide)
+    - I use [No](glyburide) glyburide
+    - [Steady](glyburide) glyburide
+    - glyburide medication [Up](glyburide)
+    - I take [Down](glyburide) glyburide
+    - glyburide is [No](glyburide)
+    - [Steady](glyburide) glyburide dose
+    - I'm taking [Up](glyburide) glyburide
+    - [Down](glyburide) glyburide medication
+    - glyburide use [No](glyburide)
+    - glyburide dose [Steady](glyburide)
+    - [Up](glyburide) glyburide taken
+    - glyburide prescribed [Down](glyburide)
+
+- intent: provide_tolbutamide
+  examples: |
+    - tolbutamide was [No](tolbutamide)
+    - I take [Steady](tolbutamide) tolbutamide
+    - [Up](tolbutamide) tolbutamide
+    - tolbutamide [Down](tolbutamide)
+    - I'm on [No](tolbutamide) tolbutamide
+    - tolbutamide: [Steady](tolbutamide)
+    - [Up](tolbutamide) tolbutamide dosage
+    - tolbutamide status [Down](tolbutamide)
+    - I use [No](tolbutamide) tolbutamide
+    - [Steady](tolbutamide) tolbutamide
+    - tolbutamide medication [Up](tolbutamide)
+    - I take [Down](tolbutamide) tolbutamide
+    - tolbutamide is [No](tolbutamide)
+    - [Steady](tolbutamide) tolbutamide dose
+    - I'm taking [Up](tolbutamide) tolbutamide
+    - [Down](tolbutamide) tolbutamide medication
+    - tolbutamide use [No](tolbutamide)
+    - tolbutamide dose [Steady](tolbutamide)
+    - [Up](tolbutamide) tolbutamide taken
+    - tolbutamide prescribed [Down](tolbutamide)
+
+- intent: provide_pioglitazone
+  examples: |
+    - pioglitazone was [No](pioglitazone)
+    - I take [Steady](pioglitazone) pioglitazone
+    - [Up](pioglitazone) pioglitazone
+    - pioglitazone [Down](pioglitazone)
+    - I'm on [No](pioglitazone) pioglitazone
+    - pioglitazone: [Steady](pioglitazone)
+    - [Up](pioglitazone) pioglitazone dosage
+    - pioglitazone status [Down](pioglitazone)
+    - I use [No](pioglitazone) pioglitazone
+    - [Steady](pioglitazone) pioglitazone
+    - pioglitazone medication [Up](pioglitazone)
+    - I take [Down](pioglitazone) pioglitazone
+    - pioglitazone is [No](pioglitazone)
+    - [Steady](pioglitazone) pioglitazone dose
+    - I'm taking [Up](pioglitazone) pioglitazone
+    - [Down](pioglitazone) pioglitazone medication
+    - pioglitazone use [No](pioglitazone)
+    - pioglitazone dose [Steady](pioglitazone)
+    - [Up](pioglitazone) pioglitazone taken
+    - pioglitazone prescribed [Down](pioglitazone)
+
+- intent: provide_rosiglitazone
+  examples: |
+    - rosiglitazone was [No](rosiglitazone)
+    - I take [Steady](rosiglitazone) rosiglitazone
+    - [Up](rosiglitazone) rosiglitazone
+    - rosiglitazone [Down](rosiglitazone)
+    - I'm on [No](rosiglitazone) rosiglitazone
+    - rosiglitazone: [Steady](rosiglitazone)
+    - [Up](rosiglitazone) rosiglitazone dosage
+    - rosiglitazone status [Down](rosiglitazone)
+    - I use [No](rosiglitazone) rosiglitazone
+    - [Steady](rosiglitazone) rosiglitazone
+    - rosiglitazone medication [Up](rosiglitazone)
+    - I take [Down](rosiglitazone) rosiglitazone
+    - rosiglitazone is [No](rosiglitazone)
+    - [Steady](rosiglitazone) rosiglitazone dose
+    - I'm taking [Up](rosiglitazone) rosiglitazone
+    - [Down](rosiglitazone) rosiglitazone medication
+    - rosiglitazone use [No](rosiglitazone)
+    - rosiglitazone dose [Steady](rosiglitazone)
+    - [Up](rosiglitazone) rosiglitazone taken
+    - rosiglitazone prescribed [Down](rosiglitazone)
+
+- intent: provide_insulin
+  examples: |
+    - insulin was [No](insulin)
+    - I take [Steady](insulin) insulin
+    - [Up](insulin) insulin
+    - insulin [Down](insulin)
+    - I'm on [No](insulin) insulin
+    - insulin: [Steady](insulin)
+    - [Up](insulin) insulin dosage
+    - insulin status [Down](insulin)
+    - I use [No](insulin) insulin
+    - [Steady](insulin) insulin
+    - insulin medication [Up](insulin)
+    - I take [Down](insulin) insulin
+    - insulin is [No](insulin)
+    - [Steady](insulin) insulin dose
+    - I'm taking [Up](insulin) insulin
+    - [Down](insulin) insulin medication
+    - insulin use [No](insulin)
+    - insulin dose [Steady](insulin)
+    - [Up](insulin) insulin taken
+    - insulin prescribed [Down](insulin)

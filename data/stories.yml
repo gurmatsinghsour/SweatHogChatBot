@@ -28,3 +28,31 @@ stories:
   - action: utter_did_that_help
   - intent: deny
   - action: utter_goodbye
+
+- story: medical form collection
+  steps:
+  - intent: provide_medical_info
+  - action: utter_start_medical_form
+  - action: medical_info_form
+  - active_loop: medical_info_form
+
+- story: diabetes prediction request
+  steps:
+  - intent: request_diabetes_prediction
+  - action: utter_start_medical_form
+  - action: medical_info_form
+  - active_loop: medical_info_form
+
+- story: greet then medical form
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: provide_medical_info
+  - action: utter_start_medical_form
+  - action: medical_info_form
+  - active_loop: medical_info_form
+
+- story: bot challenge
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot

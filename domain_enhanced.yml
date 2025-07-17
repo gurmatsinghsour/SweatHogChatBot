@@ -347,13 +347,6 @@ responses:
   - text: "Your feelings are valid, and it's okay to have difficult days. What matters is that you're actively working on your health - that takes real courage."
   - text: "I'm sorry you're going through a rough patch. Please know that every small step you take towards better health matters, and I'm here to support you."
 
-  utter_did_that_help:
-  - text: "Did that help at all? I really hope I could brighten your day a little bit!"
-  - text: "I hope that helped! Sometimes a little encouragement goes a long way. How are you feeling now?"
-  - text: "Did my pep talk work? I'm rooting for you and hoping you're feeling a bit better!"
-  - text: "Was that helpful? I'm here to support you however I can - your wellbeing matters to me!"
-  - text: "I hope that lifted your spirits! Remember, every step forward is progress worth celebrating!"
-
   utter_goodbye:
   - text: "Take care and stay healthy! Remember, knowledge is power when it comes to managing your health. You've got this!"
   - text: "Farewell for now! Keep being proactive about your health - it's one of the best investments you can make. See you soon!"
