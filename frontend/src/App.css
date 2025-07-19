@@ -1,0 +1,118 @@
+.app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background: var(--bg-primary);
+  font-family: var(--font-family);
+  color: var(--text-primary);
+  overflow: hidden;
+}
+
+.chat-container {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-primary);
+  box-shadow: var(--shadow-lg);
+  border-radius: 0;
+  overflow: hidden;
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+  .app {
+    padding: var(--spacing-lg);
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .chat-container {
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+    max-height: 800px;
+    border-radius: var(--border-radius-xl);
+    border: 1px solid var(--border-color);
+  }
+}
+
+@media (min-width: 1024px) {
+  .chat-container {
+    max-width: 1000px;
+    max-height: 700px;
+  }
+}
+
+/* Mobile optimization */
+@media (max-width: 767px) {
+  .app {
+    padding: 0;
+  }
+  
+  .chat-container {
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+  }
+}
+
+/* Loading state */
+.app.loading {
+  background: var(--bg-secondary);
+}
+
+.app.loading .chat-container {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Error state */
+.app.error {
+  background: var(--bg-secondary);
+}
+
+.app.error .chat-container {
+  border-color: var(--error-color);
+}
+
+/* Focus states for accessibility */
+.app *:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Smooth animations */
+.chat-container {
+  transition: all var(--transition-normal);
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .chat-container {
+    border-width: 2px;
+    border-color: var(--text-primary);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .chat-container {
+    transition: none;
+  }
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .app {
+    background: var(--dark-bg-primary);
+  }
+  
+  .chat-container {
+    background: var(--dark-bg-primary);
+    border-color: var(--dark-border-color);
+    color: var(--dark-text-primary);
+  }
+}

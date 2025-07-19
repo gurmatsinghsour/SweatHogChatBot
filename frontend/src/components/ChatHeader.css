@@ -1,0 +1,146 @@
+.chat-header {
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  z-index: 10;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-md) var(--spacing-lg);
+  max-width: var(--max-width-chat);
+  margin: 0 auto;
+  height: var(--header-height);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.header-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  border-radius: var(--border-radius);
+  color: var(--text-white);
+  box-shadow: var(--shadow-md);
+}
+
+.header-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.header-info {
+  flex: 1;
+}
+
+.header-title {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: var(--line-height-tight);
+}
+
+.header-subtitle {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: var(--line-height-normal);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.connection-status {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-xs) var(--spacing-md);
+  background: var(--bg-secondary);
+  border-radius: var(--border-radius-full);
+  transition: all var(--transition-normal);
+}
+
+.connection-status.connected {
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--success-color);
+}
+
+.connection-status.disconnected {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--error-color);
+}
+
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+  animation: pulse 2s infinite;
+}
+
+.connection-status.connected .status-indicator {
+  background: var(--success-color);
+}
+
+.connection-status.disconnected .status-indicator {
+  background: var(--error-color);
+}
+
+.status-text {
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .header-content {
+    padding: var(--spacing-md);
+  }
+  
+  .header-title {
+    font-size: var(--font-size-lg);
+  }
+  
+  .header-subtitle {
+    font-size: var(--font-size-xs);
+  }
+  
+  .header-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .header-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .connection-status {
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+  
+  .status-text {
+    display: none;
+  }
+  
+  .header-left {
+    gap: var(--spacing-sm);
+  }
+}

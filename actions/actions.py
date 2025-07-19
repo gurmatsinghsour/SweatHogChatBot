@@ -392,10 +392,10 @@ AI-POWERED DIABETES READMISSION RISK ASSESSMENT
 AI Confidence Score: {confidence_score:.3f}
 Estimated Risk Probability: {risk_percentage}%
 
-**AI-GENERATED MEDICAL INSIGHTS:
+AI-GENERATED MEDICAL INSIGHTS:
 {ai_remedy}
 
-**PERSONALIZED RECOMMENDATIONS:
+PERSONALIZED RECOMMENDATIONS:
 Based on the AI analysis, here are key recommendations:
 • Follow up with your healthcare team regularly
 • Monitor your blood glucose levels consistently
