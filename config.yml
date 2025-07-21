@@ -42,7 +42,7 @@ policies:
     max_history: 5
   - name: RulePolicy
     core_fallback_threshold: 0.25
-    core_fallback_action_name: "action_default_fallback"
+    core_fallback_action_name: "action_llm_fallback"
     enable_fallback_prediction: true
   - name: UnexpecTEDIntentPolicy
     max_history: 5

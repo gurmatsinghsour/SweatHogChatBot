@@ -49,6 +49,204 @@ nlu:
     - look who it is
     - fancy seeing you here
 
+- intent: ask_how_are_you
+  examples: |
+    - how are you
+    - how are you doing
+    - how's it going
+    - how are things
+    - how do you feel
+    - how are you feeling
+    - how's everything
+    - how have you been
+    - what's up with you
+    - how's your day
+    - how's life
+    - how are you today
+    - how's everything going
+    - how are you holding up
+    - how's your mood
+    - how are you doing today
+    - how's your day going
+    - are you okay
+    - are you well
+    - how is everything with you
+
+- intent: ask_name
+  examples: |
+    - what's your name
+    - what is your name
+    - who are you
+    - what should I call you
+    - what do you call yourself
+    - do you have a name
+    - what's your name?
+    - tell me your name
+    - what can I call you
+    - who am I talking to
+    - what are you called
+    - introduce yourself
+    - may I know your name
+    - can you tell me your name
+    - what should I refer to you as
+
+- intent: ask_capabilities
+  examples: |
+    - what can you do
+    - what are you capable of
+    - what can you help me with
+    - what's your purpose
+    - what are your abilities
+    - what do you do
+    - how can you help
+    - what are your functions
+    - what can you assist with
+    - what services do you provide
+    - what's your job
+    - what are you good at
+    - what are your skills
+    - tell me about your capabilities
+    - what can you offer
+    - how do you help people
+    - what are you designed for
+    - what's your specialty
+
+- intent: small_talk
+  examples: |
+    - nice weather today
+    - it's a beautiful day
+    - I'm bored
+    - tell me something interesting
+    - let's chat
+    - want to talk
+    - I'm just hanging out
+    - what's new
+    - anything exciting happening
+    - tell me about yourself
+    - I like talking to you
+    - you seem nice
+    - this is fun
+    - I enjoy our conversation
+    - you're easy to talk to
+    - I feel comfortable talking to you
+    - you're a good listener
+    - thanks for chatting
+    - I like our chats
+
+- intent: compliment_bot
+  examples: |
+    - you're great
+    - you're awesome
+    - you're helpful
+    - you're amazing
+    - you're smart
+    - you're cool
+    - you're wonderful
+    - you're fantastic
+    - you're the best
+    - you're brilliant
+    - you're impressive
+    - you're excellent
+    - you're outstanding
+    - you're incredible
+    - you're superb
+    - you're marvelous
+    - I like you
+    - you're nice
+    - you're friendly
+    - you're kind
+    - you're sweet
+    - you're charming
+    - you're delightful
+
+- intent: ask_weather
+  examples: |
+    - what's the weather like
+    - how's the weather
+    - is it raining
+    - is it sunny
+    - what's the weather today
+    - will it rain
+    - is it hot outside
+    - is it cold
+    - what's the temperature
+    - weather forecast
+    - weather report
+    - tell me about the weather
+    - how's the weather outside
+
+- intent: ask_time
+  examples: |
+    - what time is it
+    - what's the time
+    - current time
+    - tell me the time
+    - do you know what time it is
+    - can you tell me the time
+    - what time
+    - time please
+    - clock
+
+- intent: express_thanks
+  examples: |
+    - thank you
+    - thanks
+    - thank you so much
+    - thanks a lot
+    - I appreciate it
+    - much appreciated
+    - thanks for your help
+    - thank you for helping
+    - grateful
+    - I'm grateful
+    - thanks for that
+    - thank you very much
+    - many thanks
+    - cheers
+    - ta
+    - thx
+    - ty
+
+- intent: ask_joke
+  examples: |
+    - tell me a joke
+    - make me laugh
+    - say something funny
+    - can you tell a joke
+    - do you know any jokes
+    - tell me something funny
+    - make a joke
+    - be funny
+    - humor me
+    - entertain me
+    - got any jokes
+    - joke please
+    - funny story
+    - make me smile
+
+- intent: out_of_scope
+  examples: |
+    - I want to order pizza
+    - what's the meaning of life
+    - tell me about politics
+    - who won the game
+    - what's the stock price
+    - help me with my homework
+    - what's on TV
+    - play music
+    - book a flight
+    - order food
+    - call a taxi
+    - what's trending
+    - tell me about sports
+    - help me shop
+    - recipe ideas
+    - movie recommendations
+    - relationship advice
+    - investment tips
+    - career guidance
+    - travel suggestions
+
 - intent: goodbye
   examples: |
     - cu

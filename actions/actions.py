@@ -341,7 +341,7 @@ class ActionPredictDiabetesReadmission(Action):
         }
         
         analysis_intros = [
-            "🤖 Connecting to our advanced AI prediction engine... This is exciting!",
+            "Connecting to our advanced AI prediction engine... This is exciting!",
             "🔬 Sending your data to our sophisticated machine learning model...",
             "📊 Processing your medical data through our intelligent risk assessment API..."
         ]
@@ -417,7 +417,7 @@ This AI-powered assessment uses advanced machine learning algorithms and is for 
                 # Ask if user wants a detailed PDF report
                 report_offer_messages = [
                     "�📄 Would you like me to generate a comprehensive PDF report of your assessment? Just say 'yes' and I'll create a detailed medical report for you!",
-                    "📋 I can create a professional PDF report with all your assessment details. Would you like me to generate that for you?",
+                    "I can create a professional PDF report with all your assessment details. Would you like me to generate that for you?",
                     "🎯 Want a detailed PDF report for your records? I can generate a comprehensive medical assessment document!"
                 ]
                 dispatcher.utter_message(text=random.choice(report_offer_messages))
@@ -441,7 +441,7 @@ This AI-powered assessment uses advanced machine learning algorithms and is for 
         
         except Exception as e:
             logger.error(f"Unexpected error in prediction: {str(e)}")
-            dispatcher.utter_message(text="⚠️ Something unexpected happened, but I'll still provide you with a basic assessment...")
+            dispatcher.utter_message(text="WARNING: Something unexpected happened, but I'll still provide you with a basic assessment...")
             
             # Use fallback local analysis
             self._provide_fallback_analysis(dispatcher, medical_data)
@@ -497,7 +497,7 @@ This AI-powered assessment uses advanced machine learning algorithms and is for 
 • Monitor blood glucose regularly
 • Focus on healthy lifestyle choices
 
-⚕️ **NOTE:** This is a basic assessment. For detailed AI insights, please try again later when our advanced service is available.
+**NOTE:** This is a basic assessment. For detailed AI insights, please try again later when our advanced service is available.
         """
         
         dispatcher.utter_message(text=fallback_message)
@@ -561,9 +561,9 @@ class ActionGeneratePDFReport(Action):
                     download_url = f"{API_DOWNLOAD_ENDPOINT}/{report_filename}"
                     
                     success_messages = [
-                        f"🎉 Your PDF report has been generated successfully!",
-                        f"📋 Excellent! Your comprehensive medical report is ready!",
-                        f"✅ Perfect! Your detailed assessment report has been created!"
+                        f"Your PDF report has been generated successfully!",
+                        f"Excellent! Your comprehensive medical report is ready!",
+                        f"Perfect! Your detailed assessment report has been created!"
                     ]
                     
                     dispatcher.utter_message(text=random.choice(success_messages))
@@ -593,7 +593,7 @@ You can access your report using the link above, or save it using:
                     
                     logger.info(f"PDF report generated successfully: {report_filename}")
                 else:
-                    dispatcher.utter_message(text="⚠️ Report was generated but download link is not available. Please try again.")
+                    dispatcher.utter_message(text="WARNING: Report was generated but download link is not available. Please try again.")
                     
             else:
                 logger.error(f"Report generation API failed with status {response.status_code}: {response.text}")
@@ -606,5 +606,70 @@ You can access your report using the link above, or save it using:
         except Exception as e:
             logger.error(f"Unexpected error in report generation: {str(e)}")
             dispatcher.utter_message(text="⚠️ Something went wrong while generating your report. Please try again.")
+        
+        return []
+
+class ActionLLMFallback(Action):
+    def name(self) -> Text:
+        return "action_llm_fallback"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        user_message = tracker.latest_message.get('text', '')
+        
+        # Try to use local LLM (Ollama) as fallback
+        try:
+            import ollama
+            
+            # Prepare context for the LLM
+            context_prompt = f"""You are a friendly AI health assistant specializing in diabetes care. 
+            The user said: "{user_message}"
+            
+            Please respond in a conversational, helpful manner. If the question is health-related, 
+            provide general information but remind them to consult healthcare professionals for 
+            medical advice. If it's casual conversation, be friendly and try to gently steer 
+            back to health topics when appropriate.
+            
+            Keep responses concise (1-2 sentences) and engaging."""
+            
+            # Call local Ollama model (using llama3.2:1b for faster responses)
+            response = ollama.chat(model='llama3.2:1b', messages=[
+                {
+                    'role': 'system',
+                    'content': context_prompt
+                },
+                {
+                    'role': 'user', 
+                    'content': user_message
+                }
+            ])
+            
+            llm_response = response['message']['content']
+            
+            # Add a small indicator that this was AI-generated
+            fallback_responses = [
+                f"🤖 {llm_response}",
+                f"💭 {llm_response}",
+                f"🧠 {llm_response}"
+            ]
+            
+            dispatcher.utter_message(text=random.choice(fallback_responses))
+            logger.info(f"LLM fallback used for: {user_message}")
+            
+        except Exception as e:
+            logger.error(f"LLM fallback failed: {str(e)}")
+            
+            # Fallback to hardcoded responses if LLM fails
+            generic_responses = [
+                "I'm not sure I understand that completely, but I'm here to help with your health questions! Would you like to know about diabetes risk assessment?",
+                "That's interesting! While I specialize in diabetes health analytics, I'm always happy to chat. Is there anything health-related I can help you with?",
+                "I might not have the perfect answer for that, but I'm excellent at health assessments! Want to explore your diabetes risk factors?",
+                "Hmm, that's outside my main expertise area, but I love helping with health questions! How about we check your diabetes readmission risk?",
+                "I'm still learning about topics outside of health analytics! Speaking of health, have you considered getting a diabetes risk assessment?"
+            ]
+            
+            dispatcher.utter_message(text=random.choice(generic_responses))
         
         return []

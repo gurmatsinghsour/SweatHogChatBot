@@ -34,6 +34,8 @@ TIMEOUT=300  # 5 minutes timeout
 RASA_PID=""
 ACTIONS_PID=""
 FRONTEND_PID=""
+OLLAMA_PID=""
+OLLAMA_STARTED_BY_SCRIPT=false
 DOCKER_MODE=false
 TEST_RESULTS=""
 
@@ -59,6 +61,21 @@ cleanup() {
         if [[ -n "$FRONTEND_PID" ]]; then
             kill $FRONTEND_PID 2>/dev/null || true
             step "Stopped Frontend (PID: $FRONTEND_PID)"
+        fi
+        
+        # Stop Ollama if we started it
+        if [[ "$OLLAMA_STARTED_BY_SCRIPT" == "true" ]] && [[ -n "$OLLAMA_PID" ]]; then
+            step "Stopping Ollama service..."
+            kill $OLLAMA_PID 2>/dev/null || true
+            # Also try to stop via ollama command
+            ollama stop llama3.2:1b 2>/dev/null || true
+            pkill -f "ollama serve" 2>/dev/null || true
+            step "Stopped Ollama service (PID: $OLLAMA_PID)"
+        elif [[ "$OLLAMA_STARTED_BY_SCRIPT" == "true" ]]; then
+            step "Stopping Ollama service..."
+            ollama stop llama3.2:1b 2>/dev/null || true
+            pkill -f "ollama serve" 2>/dev/null || true
+            step "Stopped Ollama service"
         fi
     fi
     
@@ -111,6 +128,27 @@ check_prerequisites() {
         warn "Node.js not available. Frontend tests will be skipped."
     fi
     
+    # Check Ollama for LLM fallback
+    if command -v ollama &> /dev/null; then
+        step "Ollama available for LLM fallback"
+        # Check if Ollama is running
+        if pgrep -f "ollama serve" > /dev/null; then
+            step "Ollama service already running"
+        else
+            step "Ollama installed but not running - will start automatically"
+        fi
+        # Check if llama3.2:1b model is available
+        if ollama list | grep -q "llama3.2:1b"; then
+            step "Llama 3.2:1b model available"
+        else
+            warn "Llama 3.2:1b model not found. LLM fallback may not work properly."
+            step "To install: ollama pull llama3.2:1b"
+        fi
+    else
+        warn "Ollama not available. LLM fallback features will be disabled."
+        step "To install Ollama: brew install ollama"
+    fi
+    
     success "Prerequisites check completed"
 }
 
@@ -134,6 +172,59 @@ train_model() {
     else
         error "Model training failed"
         exit 1
+    fi
+}
+
+# Start Ollama service
+start_ollama_service() {
+    section "🦙 Starting Ollama Service"
+    
+    # Check if Ollama is available
+    if ! command -v ollama &> /dev/null; then
+        warn "Ollama not installed, skipping LLM service"
+        return
+    fi
+    
+    # Check if Ollama is already running
+    if pgrep -f "ollama serve" > /dev/null; then
+        step "Ollama service already running"
+        OLLAMA_STARTED_BY_SCRIPT=false
+        return
+    fi
+    
+    step "Starting Ollama service..."
+    
+    # Start Ollama in background
+    ollama serve > ollama.log 2>&1 &
+    OLLAMA_PID=$!
+    OLLAMA_STARTED_BY_SCRIPT=true
+    
+    step "Ollama service started (PID: $OLLAMA_PID)"
+    step "Waiting for Ollama to be ready..."
+    
+    # Wait for Ollama to be ready
+    local counter=0
+    while ! curl -s http://localhost:11434/api/tags > /dev/null; do
+        if [[ $counter -gt 30 ]]; then
+            warn "Ollama taking longer than expected, continuing..."
+            break
+        fi
+        sleep 2
+        counter=$((counter + 2))
+        step "Waiting... (${counter}s)"
+    done
+    
+    # Check if required model is available
+    if ollama list | grep -q "llama3.2:1b"; then
+        success "Ollama ready with Llama 3.2:1b model"
+    else
+        warn "Llama 3.2:1b model not found. Installing..."
+        step "Pulling Llama 3.2:1b model (this may take a few minutes)..."
+        if ollama pull llama3.2:1b; then
+            success "Llama 3.2:1b model installed successfully"
+        else
+            error "Failed to install Llama 3.2:1b model"
+        fi
     fi
 }
 
@@ -317,6 +408,26 @@ run_api_tests() {
         all_tests_passed=false
     fi
     
+    # Test 5: Ollama service
+    step "Testing Ollama service..."
+    if command -v ollama &> /dev/null && curl -s http://localhost:11434/api/tags > /dev/null; then
+        test_results+="Ollama service: PASSED\n"
+        step "Ollama service working"
+        
+        # Test if llama3.2:1b model is available
+        if ollama list | grep -q "llama3.2:1b"; then
+            test_results+="Llama3.2:1b model: PASSED\n"
+            step "Llama 3.2:1b model available"
+        else
+            test_results+="Llama3.2:1b model: FAILED\n"
+            step "Llama 3.2:1b model not available"
+            all_tests_passed=false
+        fi
+    else
+        test_results+="Ollama service: SKIPPED\n"
+        step "Ollama service not available (LLM fallback disabled)"
+    fi
+    
     TEST_RESULTS+="$test_results"
     
     if [[ "$all_tests_passed" == "true" ]]; then
@@ -476,9 +587,12 @@ EOF
     echo -e "${GREEN}========================================${NC}"
     echo
     echo -e "${BLUE}🔗 Access URLs:${NC}"
-    echo -e "  Rasa API:    http://localhost:$RASA_PORT"
+    echo -e "  🤖 Rasa API:    http://localhost:$RASA_PORT"
     [[ -n "$ACTIONS_PID" ]] && echo -e "  ⚡ Actions API:  http://localhost:$ACTIONS_PORT"
-    [[ -n "$FRONTEND_PID" ]] && echo -e "  Frontend:     http://localhost:$FRONTEND_PORT"
+    [[ -n "$FRONTEND_PID" ]] && echo -e "  🌐 Frontend:     http://localhost:$FRONTEND_PORT"
+    if command -v ollama &> /dev/null && curl -s http://localhost:11434/api/tags > /dev/null 2>&1; then
+        echo -e "  🦙 Ollama API:   http://localhost:11434"
+    fi
     echo
     echo -e "${YELLOW}Quick Tests:${NC}"
     echo -e "  curl -X POST http://localhost:$RASA_PORT/webhooks/rest/webhook \\"
@@ -494,10 +608,10 @@ interactive_mode() {
     section "🎮 Interactive Mode"
     
     echo -e "${CYAN}Choose an option:${NC}"
-    echo "1. Start all services and run tests"
-    echo "2. Start only Rasa server"
-    echo "3. Start Rasa + Actions server"
-    echo "4. Start all services (Rasa + Actions + Frontend)"
+    echo "1. Start all services and run tests (Ollama + Rasa + Actions + Frontend)"
+    echo "2. Start only Rasa server (with Ollama)"
+    echo "3. Start Rasa + Actions server (with Ollama)"
+    echo "4. Start all services (Ollama + Rasa + Actions + Frontend)"
     echo "5. Run tests on existing services"
     echo "6. Show service status"
     echo "7. Exit"
@@ -508,6 +622,7 @@ interactive_mode() {
     case $choice in
         1)
             train_model
+            start_ollama_service
             start_rasa_server
             start_actions_server
             start_frontend
@@ -518,12 +633,14 @@ interactive_mode() {
             ;;
         2)
             train_model
+            start_ollama_service
             start_rasa_server
             run_api_tests
             generate_test_report
             ;;
         3)
             train_model
+            start_ollama_service
             start_rasa_server
             start_actions_server
             run_api_tests
@@ -531,6 +648,7 @@ interactive_mode() {
             ;;
         4)
             train_model
+            start_ollama_service
             start_rasa_server
             start_actions_server
             start_frontend
@@ -548,6 +666,7 @@ interactive_mode() {
             curl -s http://localhost:$RASA_PORT/status >/dev/null && echo "Rasa: Running" || echo "Rasa: Not running"
             curl -s http://localhost:$ACTIONS_PORT/health >/dev/null && echo "Actions: Running" || echo "Actions: Not running"
             curl -s http://localhost:$FRONTEND_PORT >/dev/null && echo "Frontend: Running" || echo "Frontend: Not running"
+            curl -s http://localhost:11434/api/tags >/dev/null && echo "Ollama: Running" || echo "Ollama: Not running"
             ;;
         7)
             log "Exiting..."
@@ -566,10 +685,10 @@ main() {
     echo -e "${PURPLE}"
     cat << "EOF"
 ╔══════════════════════════════════════════════════════════════╗
-║              🏥 DIABETES CHATBOT STARTUP SCRIPT 🏥           ║
+║              DIABETES CHATBOT STARTUP SCRIPT                 ║
 ║                                                              ║
-║  Complete setup, deployment, and testing for your           ║
-║  secure diabetes readmission prediction chatbot!            ║
+║  Complete setup, deployment, and testing for your            ║
+║  secure diabetes readmission prediction chatbot!             ║
 ╚══════════════════════════════════════════════════════════════╝
 EOF
     echo -e "${NC}\n"
@@ -583,6 +702,7 @@ EOF
         case "$1" in
             --full|--all)
                 train_model
+                start_ollama_service
                 start_rasa_server
                 start_actions_server
                 start_frontend
@@ -593,6 +713,7 @@ EOF
                 ;;
             --rasa-only)
                 train_model
+                start_ollama_service
                 start_rasa_server
                 run_api_tests
                 generate_test_report
@@ -621,9 +742,15 @@ EOF
     fi
     
     # Keep services running
-    if [[ -n "$RASA_PID" ]] || [[ -n "$ACTIONS_PID" ]] || [[ -n "$FRONTEND_PID" ]]; then
+    if [[ -n "$RASA_PID" ]] || [[ -n "$ACTIONS_PID" ]] || [[ -n "$FRONTEND_PID" ]] || [[ "$OLLAMA_STARTED_BY_SCRIPT" == "true" ]]; then
         section "Services Running"
         success "All requested services are running. Press Ctrl+C to stop."
+        
+        # Display running services
+        [[ -n "$RASA_PID" ]] && step "Rasa server running (PID: $RASA_PID)"
+        [[ -n "$ACTIONS_PID" ]] && step "Actions server running (PID: $ACTIONS_PID)"
+        [[ -n "$FRONTEND_PID" ]] && step "Frontend running (PID: $FRONTEND_PID)"
+        [[ "$OLLAMA_STARTED_BY_SCRIPT" == "true" ]] && step "Ollama service running (PID: ${OLLAMA_PID:-'system service'})"
         
         # Wait for user interrupt
         while true; do

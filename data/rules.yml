@@ -94,3 +94,58 @@ rules:
   steps:
   - intent: decline_report_generation
   - action: utter_report_declined
+
+- rule: Respond to how are you questions
+  steps:
+  - intent: ask_how_are_you
+  - action: utter_how_are_you
+
+- rule: Respond to name questions
+  steps:
+  - intent: ask_name
+  - action: utter_my_name
+
+- rule: Respond to capability questions
+  steps:
+  - intent: ask_capabilities
+  - action: utter_my_capabilities
+
+- rule: Handle small talk
+  steps:
+  - intent: small_talk
+  - action: utter_small_talk
+
+- rule: Respond to compliments
+  steps:
+  - intent: compliment_bot
+  - action: utter_compliment_received
+
+- rule: Handle weather questions
+  steps:
+  - intent: ask_weather
+  - action: utter_cannot_help_weather
+
+- rule: Handle time questions
+  steps:
+  - intent: ask_time
+  - action: utter_cannot_help_time
+
+- rule: Respond to thanks
+  steps:
+  - intent: express_thanks
+  - action: utter_thanks_received
+
+- rule: Tell jokes when asked
+  steps:
+  - intent: ask_joke
+  - action: utter_joke
+
+- rule: Handle out of scope questions with LLM fallback
+  steps:
+  - intent: out_of_scope
+  - action: action_llm_fallback
+
+- rule: Default fallback for unknown intents
+  steps:
+  - intent: nlu_fallback
+  - action: action_llm_fallback

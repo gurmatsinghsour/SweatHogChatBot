@@ -75,3 +75,49 @@ stories:
   steps:
   - intent: ask_report_info
   - action: utter_report_info
+
+- story: casual greeting and name question
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_name
+  - action: utter_my_name
+  - intent: ask_how_are_you
+  - action: utter_how_are_you
+
+- story: how are you conversation
+  steps:
+  - intent: ask_how_are_you
+  - action: utter_how_are_you
+  - intent: ask_capabilities
+  - action: utter_my_capabilities
+
+- story: small talk to health topic
+  steps:
+  - intent: small_talk
+  - action: utter_small_talk
+  - intent: provide_medical_info
+  - action: utter_start_medical_form
+  - action: medical_info_form
+  - active_loop: medical_info_form
+
+- story: compliment and capabilities
+  steps:
+  - intent: compliment_bot
+  - action: utter_compliment_received
+  - intent: ask_capabilities
+  - action: utter_my_capabilities
+
+- story: joke and thanks
+  steps:
+  - intent: ask_joke
+  - action: utter_joke
+  - intent: express_thanks
+  - action: utter_thanks_received
+
+- story: out of scope to health topic
+  steps:
+  - intent: out_of_scope
+  - action: action_llm_fallback
+  - intent: ask_capabilities
+  - action: utter_my_capabilities

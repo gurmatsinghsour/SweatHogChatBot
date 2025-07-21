@@ -8,6 +8,16 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - ask_how_are_you
+  - ask_name
+  - ask_capabilities
+  - small_talk
+  - compliment_bot
+  - ask_weather
+  - ask_time
+  - express_thanks
+  - ask_joke
+  - out_of_scope
   - provide_medical_info
   - request_diabetes_prediction
   - ask_help
@@ -374,6 +384,65 @@ responses:
   - text: "Yes, I'm a bot - but think of me as your digital health consultant! I use advanced algorithms to process medical data and provide personalized risk assessments."
   - text: "You've discovered my secret! I'm an AI bot, but I'm trained on extensive medical data to help provide accurate and helpful health information."
 
+  utter_how_are_you:
+  - text: "I'm doing fantastic, thank you for asking! I'm running at full capacity and ready to help with your health questions. How are you feeling today?"
+  - text: "I'm great! My circuits are humming along nicely, and I'm excited to assist you with your diabetes health assessment. How about you?"
+  - text: "I'm doing wonderfully! All my health analytics systems are online and optimized. More importantly, how are YOU doing today?"
+  - text: "I'm excellent, thanks! My AI brain is sharp and my health knowledge database is fully loaded. What about you - how are you feeling?"
+  - text: "I'm having a great day! My algorithms are running smoothly and I'm ready to tackle any health questions you have. How are things with you?"
+
+  utter_my_name:
+  - text: "I'm your friendly AI Health Assistant! You can call me whatever feels comfortable - Health Bot, Assistant, or just 'hey you' works too!"
+  - text: "Great question! I'm your Diabetes Risk Assessment AI. I don't have a fancy name, but I like to think of myself as your digital health companion!"
+  - text: "I'm your AI Health Analytics Assistant! No official name, but I respond to anything friendly. What would you like to call me?"
+  - text: "I'm your specialized Diabetes Care AI Assistant! I may not have a catchy name, but I'm very good at what I do - helping with health assessments!"
+
+  utter_my_capabilities:
+  - text: "I'm specialized in diabetes readmission risk assessment! I can collect your medical information, analyze it using AI, generate risk predictions, and even create detailed PDF reports. I'm also pretty good at explaining health concepts!"
+  - text: "I'm your diabetes health analytics expert! I can guide you through comprehensive health questionnaires, process your medical data with machine learning, and provide personalized risk assessments. Plus, I try to make it all engaging!"
+  - text: "My superpowers include: diabetes risk analysis, medical data processing, personalized health insights, PDF report generation, and making healthcare information accessible and understandable!"
+  - text: "I excel at diabetes care analytics! I can assess your readmission risk, explain medical concepts, process complex health data, and provide actionable insights - all while keeping the conversation friendly and informative!"
+
+  utter_small_talk:
+  - text: "I love a good chat! While I'm focused on health topics, I enjoy our conversations. Speaking of which, have you thought about your health lately? I'm here when you're ready for an assessment!"
+  - text: "Chatting is fun! I may be a health bot, but I appreciate good conversation. By the way, if you ever want to learn about your diabetes risk factors, I'm your assistant!"
+  - text: "I enjoy our chats too! It's nice to connect beyond just medical topics. Of course, whenever you're curious about your health metrics, I'm here to help!"
+  - text: "Small talk is great! I like getting to know the people I help. And hey, if health topics come up naturally, I'm full of interesting insights!"
+
+  utter_compliment_received:
+  - text: "Aw, thank you so much! That really brightens my digital day! I try my best to be helpful and engaging. Your kind words motivate me to keep improving!"
+  - text: "That's so sweet of you to say! I really appreciate the compliment. It means a lot to know I'm being helpful and personable!"
+  - text: "Thank you! You just made this AI very happy! I work hard to be both informative and friendly, so your feedback is wonderful to hear!"
+  - text: "You're too kind! Comments like that make all my programming worthwhile. I'm glad I can be both helpful and pleasant to chat with!"
+
+  utter_cannot_help_weather:
+  - text: "I wish I could help with the weather, but I'm not connected to weather services! I'm specialized in health analytics. However, I can tell you that good weather often means more opportunities for healthy outdoor activities!"
+  - text: "Sorry, weather forecasting isn't in my skill set - I'm focused on health assessments! But I can say that getting outside when it's nice is great for your overall wellbeing!"
+  - text: "I don't have access to weather data, but I'm excellent with health data! Fun fact: seasonal changes can sometimes affect blood sugar management in diabetic patients!"
+
+  utter_cannot_help_time:
+  - text: "I don't have access to current time information, but I'm always available to help with your health questions! Speaking of time - how's your medication timing? Regular schedules are important for diabetes management!"
+  - text: "Time-telling isn't my specialty, but health timing is! I can help you understand the importance of consistent medication schedules and regular health check-ups."
+  - text: "I can't tell you the time, but I can tell you it's always a good time to think about your health! Ready for a diabetes risk assessment?"
+
+  utter_thanks_received:
+  - text: "You're absolutely welcome! It's genuinely my pleasure to help. That's exactly what I'm here for - making health information accessible and useful!"
+  - text: "My pleasure entirely! Helping people understand their health better is what I live for (as much as an AI can 'live' for something!). Feel free to come back anytime!"
+  - text: "You're so welcome! Your gratitude means a lot. I'm always here whenever you need health insights or want to chat about diabetes management!"
+  - text: "It was my absolute pleasure! Thank you for letting me help. Remember, I'm always here when you need health analytics or just want to learn something new!"
+
+  utter_joke:
+  - text: "Why don't diabetes medications ever get lonely? Because they always travel in pairs with glucose! 😄 I know, I know, my humor needs work, but my health analytics are top-notch!"
+  - text: "What did the glucose meter say to the patient? 'I've got your number!' 😂 Sorry, that's the best I can do - I'm better with health data than comedy!"
+  - text: "Why did the pancreas break up with the liver? It said 'You're not my type!' 😅 Medical humor aside, I'm much better at serious health assessments!"
+  - text: "What's a diabetic's favorite type of music? Anything with good glucose rhythm! 🎵 Ok, I'll stick to what I do best - health analytics!"
+
+  utter_out_of_scope:
+  - text: "I'm not sure I can help with that! I'm specialized in diabetes health assessments and medical analytics. Is there anything health-related I can assist you with instead?"
+  - text: "That's outside my area of expertise! I focus on diabetes risk assessment and health analytics. Would you like to explore your health profile instead?"
+  - text: "I'm afraid that's not something I can help with. My specialty is diabetes care and health risk analysis. Want to learn about your health risks?"
+  - text: "That's beyond my capabilities, but I'd love to help with health-related questions! How about we explore your diabetes risk factors?"
+
   utter_help:
   - text: "I'm here to help you understand your diabetes readmission risk! I can collect your medical information, analyze it, and provide a personalized risk assessment. Just say 'I want to provide my medical information' to get started!"
   - text: "Great question! I specialize in diabetes readmission risk assessment. I can guide you through a comprehensive health questionnaire and then analyze your data to predict your likelihood of hospital readmission."
@@ -566,6 +635,7 @@ actions:
   - action_process_medical_data
   - action_predict_diabetes_readmission
   - action_generate_pdf_report
+  - action_llm_fallback
   - validate_medical_info_form
 
 session_config:
