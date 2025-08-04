@@ -13,6 +13,8 @@ import random
 import requests
 import json
 from datetime import datetime
+import re
+
 
 logger = logging.getLogger(__name__)
 
@@ -540,9 +542,7 @@ class ActionGeneratePDFReport(Action):
             # Prepare API payload (reuse the method from prediction action)
             prediction_action = ActionPredictDiabetesReadmission()
             api_payload = prediction_action._prepare_api_payload(medical_data)
-            
             logger.info(f"Sending report generation request to API: {API_REPORT_ENDPOINT}")
-            
             # Make API request for PDF report generation
             headers = {"Content-Type": "application/json"}
             response = requests.post(
@@ -551,25 +551,84 @@ class ActionGeneratePDFReport(Action):
                 headers=headers,
                 timeout=60  # Longer timeout for report generation
             )
-            
             if response.status_code == 200:
-                # Extract the report filename from response
-                report_data = response.json()
-                report_filename = report_data.get("report_filename")
+                # Check content type to determine response format
+                content_type = response.headers.get("Content-Type", "")
                 
-                if report_filename:
+                if "application/pdf" in content_type:
+                    # Backend returned PDF file directly
+                    logger.info("Received PDF file directly from backend")
+                    
+                    # Extract filename from Content-Disposition header or create one
+                    content_disposition = response.headers.get("Content-Disposition", "")
+                    match = re.search(r'filename="?([^";]+)"?', content_disposition)
+                    
+                    if match:
+                        report_filename = match.group(1)
+                    else:
+                        # Generate a filename if not provided
+                        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+                        report_filename = f"medical_report_{timestamp}.pdf"
+                    
+                    logger.info(f"PDF report generated successfully: {report_filename}")
+                    
+                    # Create proper download URL
                     download_url = f"{API_DOWNLOAD_ENDPOINT}/{report_filename}"
                     
+                    # For direct PDF response, we'll provide a generic download message
                     success_messages = [
-                        f"Your PDF report has been generated successfully!",
-                        f"Excellent! Your comprehensive medical report is ready!",
-                        f"Perfect! Your detailed assessment report has been created!"
+                        "Your PDF report has been generated successfully!",
+                        "Excellent! Your comprehensive medical report is ready!",
+                        "Perfect! Your detailed assessment report has been created!"
                     ]
-                    
                     dispatcher.utter_message(text=random.choice(success_messages))
                     
                     dispatcher.utter_message(
                         text=f"""
+📄 **YOUR MEDICAL REPORT IS READY!**
+
+� **Download Link:** {API_REPORT_ENDPOINT}
+
+�📊 **Report Contains:**
+• Complete risk assessment analysis
+• AI-generated medical insights  
+• Personalized recommendations
+• Detailed data summary
+• Professional medical formatting
+
+📥 **Download Information:**
+Your report "{report_filename}" has been generated and is ready for download.
+
+💡 **To download your report:**
+Click the download button above to open your PDF in a new window, or use this curl command:
+`curl -o report.pdf {download_url}`
+
+⏰ **Report Availability:** Your report will be available for the next 24 hours.
+
+🔒 **Privacy Note:** Your report is securely generated and contains your personalized health assessment.
+                        """
+                    )
+                    
+                elif "application/json" in content_type:
+                    # Backend returned JSON with filename
+                    try:
+                        report_data = response.json()
+                        
+                        if report_data.get("status") == "success":
+                            report_filename = report_data.get("pdf_filename")
+                            
+                            if report_filename:
+                                download_url = f"{API_DOWNLOAD_ENDPOINT}/{report_filename}"
+                                
+                                success_messages = [
+                                    "Your PDF report has been generated successfully!",
+                                    "Excellent! Your comprehensive medical report is ready!",
+                                    "Perfect! Your detailed assessment report has been created!"
+                                ]
+                                dispatcher.utter_message(text=random.choice(success_messages))
+                                
+                                dispatcher.utter_message(
+                                    text=f"""
 📄 **YOUR MEDICAL REPORT IS READY!**
 
 🔗 **Download Link:** {download_url}
@@ -583,31 +642,92 @@ class ActionGeneratePDFReport(Action):
 
 💡 **To download your report:**
 You can access your report using the link above, or save it using:
-`curl -o medical_report.pdf {download_url}`
+`curl -o report.pdf {download_url}`
 
 ⏰ **Report Availability:** Your report will be available for download for the next 24 hours.
 
 🔒 **Privacy Note:** Your report is securely generated and contains your personalized health assessment.
-                        """
-                    )
-                    
-                    logger.info(f"PDF report generated successfully: {report_filename}")
+                                    """
+                                )
+                                logger.info(f"PDF report generated successfully: {report_filename}")
+                            else:
+                                dispatcher.utter_message(text="❌ Report was generated but download link is not available. Please try again.")
+                        else:
+                            error_msg = report_data.get("error", "Unknown error occurred")
+                            dispatcher.utter_message(text=f"❌ Report generation failed: {error_msg}")
+                    except json.JSONDecodeError:
+                        dispatcher.utter_message(text="❌ Received invalid response from report service.")
                 else:
-                    dispatcher.utter_message(text="WARNING: Report was generated but download link is not available. Please try again.")
-                    
+                    dispatcher.utter_message(text="❌ Unexpected response format from report service.")
             else:
                 logger.error(f"Report generation API failed with status {response.status_code}: {response.text}")
                 dispatcher.utter_message(text="❌ I'm having trouble generating your PDF report right now. Please try again in a few moments.")
-                
         except requests.exceptions.RequestException as e:
             logger.error(f"Report generation API connection error: {str(e)}")
             dispatcher.utter_message(text="🔄 I'm unable to connect to the report generation service at the moment. Please try again later.")
-            
+
         except Exception as e:
             logger.error(f"Unexpected error in report generation: {str(e)}")
             dispatcher.utter_message(text="⚠️ Something went wrong while generating your report. Please try again.")
-        
+
         return []
+
+#                 # Extract the report filename from response
+#                 report_data = response.json()
+
+#                 report_filename = report_data.get("pdf_filename")
+                
+#                 if report_filename:
+#                     download_url = f"{API_DOWNLOAD_ENDPOINT}/download_report/{report_filename}"
+
+#                     success_messages = [
+#                         f"Your PDF report has been generated successfully!",
+#                         f"Excellent! Your comprehensive medical report is ready!",
+#                         f"Perfect! Your detailed assessment report has been created!"
+#                     ]
+                    
+#                     dispatcher.utter_message(text=random.choice(success_messages))
+                    
+#                     dispatcher.utter_message(
+#                         text=f"""
+# 📄 **YOUR MEDICAL REPORT IS READY!**
+
+# 🔗 **Download Link:** {download_url}
+
+# 📊 **Report Contains:**
+# • Complete risk assessment analysis
+# • AI-generated medical insights
+# • Personalized recommendations
+# • Detailed data summary
+# • Professional medical formatting
+
+# 💡 **To download your report:**
+# You can access your report using the link above, or save it using:
+# `curl -o medical_report.pdf {download_url}`
+
+# ⏰ **Report Availability:** Your report will be available for download for the next 24 hours.
+
+# 🔒 **Privacy Note:** Your report is securely generated and contains your personalized health assessment.
+#                         """
+#                     )
+                    
+#                     logger.info(f"PDF report generated successfully: {report_filename}")
+#                 else:
+#                     dispatcher.utter_message(text="WARNING: Report was generated but download link is not available. Please try again.")
+                    
+#             else:
+#                 logger.error(f"Report generation API failed with status {response.status_code}: {response.text}")
+#                 dispatcher.utter_message(text="❌ I'm having trouble generating your PDF report right now. Please try again in a few moments.")
+                
+#         except requests.exceptions.RequestException as e:
+#             logger.error(f"Report generation API connection error: {str(e)}")
+#             dispatcher.utter_message(text="🔄 I'm unable to connect to the report generation service at the moment. Please try again later.")
+            
+#         except Exception as e:
+#             logger.error(f"Unexpected error in report generation: {str(e)}")
+#             dispatcher.utter_message(text="⚠️ Something went wrong while generating your report. Please try again.")
+        
+#         return []
 
 class ActionLLMFallback(Action):
     def name(self) -> Text:

@@ -56,6 +56,40 @@ export class RasaAPI {
       return false;
     }
   }
+
+  // Open PDF report in new window/tab
+  openReportInNewWindow(reportUrl: string): void {
+    window.open(reportUrl, '_blank');
+  }
+
+  extractDownloadLink(message: string): string | null {
+    // Check for predict_with_report API endpoint (which generates and serves PDF)
+    const reportApiPattern = /http:\/\/localhost:\d+\/predict_with_report/;
+    const apiMatch = message.match(reportApiPattern);
+    if (apiMatch) {
+      return apiMatch[0];
+    }
+    
+    // Also check for direct download URLs - more specific pattern to avoid capturing extra characters
+    const downloadPattern = /http:\/\/localhost:\d+\/download_report\/[a-zA-Z0-9_.-]+\.pdf/;
+    const downloadMatch = message.match(downloadPattern);
+    if (downloadMatch) {
+      return downloadMatch[0];
+    }
+    
+    return null;
+  }
+
+  // Helper method to check if a message contains a download link
+  hasDownloadLink(message: string): boolean {
+    return this.extractDownloadLink(message) !== null;
+  }
+
+  // Helper method to extract filename from download URL
+  extractFilenameFromUrl(url: string): string {
+    const parts = url.split('/');
+    return parts[parts.length - 1] || 'medical_report.pdf';
+  }
 }
 
 export const rasaAPI = RasaAPI.getInstance();

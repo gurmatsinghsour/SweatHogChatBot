@@ -126,8 +126,39 @@ Thumbs.db
 # Logs
 *.log
 logs/
+actions_server.log
+frontend.log
+rasa_server.log
+ollama.log
 
 # Temporary files
 *.tmp
 *.temp
 .tmp/
+
+# Frontend specific (Node.js/React)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.eslintcache
+.next/
+.nuxt/
+dist/
+build/
+
+# Environment and configuration files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Generated PDFs and reports
+*.pdf
+reports/
+
+# Rasa training artifacts
+training_runs/
+graph.html
+story_graph.dot
