@@ -1,31 +1,18 @@
-# Rasa and Core Dependencies - Production Ready
 rasa[spacy]==3.6.21
 rasa-sdk==3.6.2
-
-# Security enhancements
 cryptography>=41.0.0
 requests>=2.31.0
 urllib3>=2.0.0
-
-# Performance optimizations
 redis>=4.0.0
 psycopg2-binary>=2.9.0
 aiohttp>=3.8.0
-
-# Monitoring and logging
 prometheus-client>=0.16.0
 structlog>=23.0.0
-
-# Data processing
 pandas>=1.5.0
 numpy>=1.22.0,<1.24.0
 scikit-learn<1.2,>=1.0.0
-
-# NLP models
 spacy<3.5,>=3.1
 https://github.com/explosion/spacy-models/releases/download/en_core_web_md-3.4.1/en_core_web_md-3.4.1-py3-none-any.whl
-
-# Additional security
 pyjwt>=2.8.0
 bcrypt>=4.0.0
 argon2-cffi>=21.0.0
