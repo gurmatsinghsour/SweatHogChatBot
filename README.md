@@ -6,7 +6,7 @@ A comprehensive healthcare chatbot system built with Rasa framework for predicti
 
 **IMPORTANT**: This project requires a separate backend API server for machine learning predictions and PDF report generation. You must clone and set up the backend repository first before running this chatbot application.
 
-**Backend Repository**: https://github.com/gurmatsinghsour/SweatHogChatBot
+**Backend Repository**: https://github.com/gurmatsinghsour/SweatHogsCapProj
 
 ### Backend Setup Steps:
 
